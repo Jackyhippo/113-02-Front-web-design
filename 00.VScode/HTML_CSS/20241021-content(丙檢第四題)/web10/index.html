@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>網路行銷購物網</title>
+  <style>
+    #main {
+      width: 1024px;
+      height: 768px;
+      margin: auto;
+      background: lightyellow;
+    }
+
+    #top {
+      width: 1024px;
+      height: 120px;
+      background-image: url('./images/0401.jpg');
+      /* background: lightgreen; */
+    }
+
+    #top a {
+      font-family: '標楷體';
+      font-size: 52px;
+      color: #fff;
+      text-shadow: 10px 10px 15px #333;
+      text-decoration: none;
+      /* 單行文字或 inline、inline-block 可以用 line-height 值為父容器的高度 */
+      line-height: 120px;
+      /* 轉型成block 就可以在 a 標籤內水平置中 */
+      display: block;
+      text-align: center;
+    }
+
+    #marquee {
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      font-family: '標楷體';
+      font-size: 19px;
+      color: #00f;
+      background: url('./images/0402.jpg');
+      /* background: lightsalmon; */
+    }
+
+    #content {
+      width: 1024px;
+      height: calc(768px - 120px - 30px - 78px);
+      background: url('./images/0402.jpg');
+      /* background: lightblue; */
+    }
+
+    iframe {
+      width: 1024px;
+      height: calc(768px - 120px - 30px - 78px);
+      /* background: lightsteelblue; */
+    }
+
+    #footer {
+      width: 1024px;
+      height: 78px;
+      font-family: '標楷體';
+      /* 不用加單位，代表倍數 */
+      line-height: 2;
+      color: #fff;
+      text-align: left;
+      background: #660;
+    }
+
+    #footer a {
+      /* 為點選瀏覽的顏色 #FFFFFF */
+      /* a 預設自帶文字藍色，無法藉由父容器的顏色設定改變，要再對其做顏色改變 */
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* 以點選(拜訪)的顏色 */
+    /* ctrl+shift+del 可以清除瀏覽資料 */
+    #footer a:visited {
+      color: #f99;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 背景音樂 -->
+  <!-- 記得加上 autoplay 以及對回首頁點一下，頁籤會顯示喇叭的圖示，開啟右下角的聲音 -->
+  <audio src="./music/0401.mp3" autoplay></audio>
+  <div id="main">
+    <div id="top"><a href="./index.html">流行精品購物網站</a></div>
+    <div id="marquee">
+      <marquee behavior="" direction="">大家來購物網!精品商品特價大拍賣!要買要快!</marquee>
+    </div>
+    <div id="content">
+      <iframe src="./results/main.html" frameborder="0" name="iframe"></iframe>
+    </div>
+    <div id="footer">
+      <a href="./results/message.html" target="iframe">訪客留言版</a>
+      <br>
+      <span>網頁設計及維護：10洪士杰、最近更新日期：2024/10/21</span>
+    </div>
+  </div>
+</body>
+
+</html>

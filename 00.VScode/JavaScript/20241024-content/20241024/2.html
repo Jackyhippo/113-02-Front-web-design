@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="list1">
+    <p>List 1</p>
+    <ul>
+      <li>A</li>
+      <li>B</li>
+      <li>C</li>
+    </ul>
+  </div>
+  <hr>
+  <div id="list2">
+    <p>List 2</p>
+    <ul>
+      <li>E</li>
+      <li>F</li>
+      <li>G</li>
+    </ul>
+  </div>
+  <hr>
+  <div id="list3">
+    <p>List 3</p>
+    <ul>
+      <li id="list3liA">A</li>
+      <li id="list3liB">B</li>
+      <li id="list3liC">C</li>
+      <li id="list3liD">D</li>
+      <li id="list3liE">E</li>
+      <li id="list3liF">F</li>
+      <li id="list3liG">G</li>
+    </ul>
+  </div>
+  <hr>
+  <div id="list4" style="padding: 20px;">
+    <div style="padding: 20px;">
+      <p>List 4</p>
+      <ul>
+        <li>A</li>
+        <li id="list4liB">B</li>
+        <li>C</li>
+      </ul>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+    crossorigin='anonymous'></script>
+  <script>
+    // .find(選擇器) 在所有內層找符合的
+    $('#list1').find('li').eq(1).css('color', 'red')
+    document.querySelector('#list1').querySelectorAll('li')[2].style.color = 'red'
+
+    // .children(選擇器)
+    // 在下一層找符合的，選擇器沒寫就是全部
+    $('#list2').children('li').text('123')   // unfunction
+    $('#list2').children('p').css('color', 'red')
+    $('#list2').children().first().css('border', '1px solid blue')
+
+    // .prev()              同一層前一個，可以用選擇器過濾，符合選擇器才有用
+    // .prevAll()           同一層前面所有，可以用選擇器過濾，符合選擇器才有用
+    // .prevUntil(選擇器)   同一層前面到選擇器所有，不含頭尾，找不到時等於 .prevAll()
+    // .next()              同一層後一個，可以用選擇器過濾，符合選擇器才有用
+    // .nextAll()           同一層後面所有，可以用選擇器過濾，符合選擇器才有用
+    // .nextUntil(選擇器)   同一層後面到選擇器所有，不含頭尾，找不到時等於 .nextAll()
+    // .siblings(選擇器)    同一層其他，可以用選擇器過濾，符合選擇器才有用
+    const list3liD = $('#list3liD')
+    list3liD.prev('#list3liB').css('color', 'red')
+    list3liD.prevAll().css('background', 'gray')
+    list3liD.prevUntil('#list3liA').css('text-align', 'center')
+    list3liD.next().css('color', 'red')
+    list3liD.nextAll('p').css('color', 'red')
+    list3liD.nextUntil('#list3liF').css('text-align', 'center')
+    list3liD.siblings('#list3liG').css({ 'font-style': 'italic', 'color': 'skyblue' })
+
+    // .parent()               上一層，可以用選擇器過濾，符合選擇器才有用
+    // .parents()              往上直到 <html>，可以用選擇器過濾，符合選擇器才有用
+    // .parentsUntil(選擇器)    往上到選擇器間所有，不含頭尾，找不到時等於 .parents()
+    // .closest(選擇器)         網上找符合選擇器的第一個(最接近的)
+    const list4liB = $('#list4liB')
+    list4liB.parent().css('background', 'skyblue')    //ul被選到
+    list4liB.parents('div').css('background', 'pink')
+    list4liB.parentsUntil('body').css('font-weight', 'bold')
+    // list4liB.closest('div').css('border', '1px solid black')
+  </script>
+</body>
+
+</html>

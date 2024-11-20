@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [1, 2, 3, 4]
+        // for (變數 of 陣列)
+        // 迴圈陣列每個值
+        // 前面寫單數後面寫複數
+        for (const number of numbers) {
+            document.write(number + '<br>')
+        }
+
+        document.write('<hr>')
+
+        // for (索引 in 陣列)
+        // 迴圈陣列每個索引
+        // i 的資料型態會是文字
+        for (const i in numbers) {
+            console.log(i, typeof i)
+            document.write(`i ${i}: ${numbers[i]}<br>`)
+        }
+
+        document.write('<hr>')
+
+        // 物件只能用 for in，陣列 for in/of 都能用
+        const obj = { a: 1, b: 2, c: 3 }
+        for (const key in obj) {
+            document.write(`key:${key}: ${obj[key]}<br>`)
+        }
+
+        // of 不能改值，in 對物件就可以改值
+        const numbers2 = [1, 2, 3, 4]
+        for (let number of numbers) {
+            number *= 1000
+        }
+        console.log(numbers2)
+        for (let i in numbers) {
+            numbers2[i] *= 1000
+        }
+        console.log(numbers2)
+
+    </script>
+</body>
+
+</html>

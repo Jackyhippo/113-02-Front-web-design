@@ -1,0 +1,2 @@
+
+npm i linebot dotenv axios => 用空白來區分不同套件(可同時安裝)

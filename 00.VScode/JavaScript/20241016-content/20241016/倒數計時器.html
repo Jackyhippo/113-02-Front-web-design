@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <span id="sec">準備倒數</span>
+  <script>
+    let sec = parseInt(prompt('輸入秒'))
+    const time = document.getElementById('sec')
+
+    let timer = setInterval(() => {
+      time.style.color = 'blue'
+      time.innerText = `剩餘${sec}秒`
+      sec--
+      if (sec < 0) {
+        time.innerText = `時間到`
+        time.style.color = 'red'
+        clearInterval(timer)
+      }
+    }, 1000)
+
+    // -----------------------------------------------------------------------------
+    // let number = 10
+    // let timer = setInterval(() => {
+    //   document.write(number + '<br>')
+    //   number--
+    //   if (number < 0) {
+    //     clearInterval(timer)
+    //   }
+    // }, 1000)
+  </script>
+</body>
+
+</html>

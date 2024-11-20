@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #out {
+      width: 300px;
+      height: 300px;
+      background: gray;
+    }
+
+    #in {
+      width: 100px;
+      height: 100px;
+      background: black;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="http://x.com" id="link">X</a>
+  <div id="out">
+    <div id="in"></div>
+  </div>
+  <script>
+    const link = document.getElementById('link')
+    link.onclick = (event) => {
+      // .preventDefault() 把預設動作擋下來
+      event.preventDefault()
+    }
+
+    const divOut = document.getElementById('out')
+    const divIn = document.getElementById('in')
+    divOut.onclick = (event) => {
+      console.log('out', event.target)
+    }
+    divIn.onclick = (event) => {
+      // event.target 事件目標 !== .onclick事件點擊
+      // .onclick事件會回傳所有點到的單一目標
+      // event.target 事件目標是依照所點的物件為目標
+      console.log('in', event.target)
+      // 停止回傳 .onclick事件會回傳所有點到的目標
+      event.stopPropagation()
+    }
+  </script>
+</body>
+
+</html>

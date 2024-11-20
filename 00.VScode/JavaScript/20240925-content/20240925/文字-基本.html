@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let account = '     sghsghshg    jshjhgshg        '
+    console.log(account)
+    // .trim()
+    // 移除前後空白(中間空白會留著)
+    account = account.trim()
+    console.log(account)
+    // .toUpperCase()
+    // 轉大寫
+    account = account.toUpperCase()
+    console.log(account)
+    // .toLowerCase()
+    // 轉小寫
+    account = account.toLowerCase()
+    console.log(account)
+
+    // 文字可以用 . 來相連接
+    console.log(account.trim().toLocaleUpperCase().match())
+  </script>
+</body>
+
+</html>

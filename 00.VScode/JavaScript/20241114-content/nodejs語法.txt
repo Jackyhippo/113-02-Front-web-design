@@ -1,0 +1,22 @@
+終端機指令
+
+cd (導入資料夾名稱)
+
+cd ../ (跳出資料夾名稱)
+
+node -v  =>(顯示當下node.js版本)
+
+npm init  =>(建立package.json專案)
+
+npm init --yes =>(快速建立package.json專案)
+
+node index.js
+
+
+使用 export default 匯出 =>一個檔案只能使用一個(要選取多需使用{}包起來)
+
+npm i =>(安裝套件指令)
+
+npm init @eslint/config@latest -- --eslintrc --config eslint-config-standard =>(安裝eslint)
+
+npm i -D nodemon =>(安裝nodemon)

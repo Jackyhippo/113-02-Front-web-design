@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1024px;
+            height: 768px;
+            margin: auto;
+            font-family: '微軟正黑體';
+            font-size: 3rem;
+            text-align: center;
+            color: rgb(83, 80, 80);
+            background: gray;
+        }
+
+        .header {
+            /* width: 1024px; */
+            background: greenyellow;
+            height: 100px;
+            line-height: 100px;
+        }
+
+        .left {
+            background: pink;
+            /* calc +、-、*、/，運算子左右要空格 */
+            width: 200px;
+            height: calc(768px - 100px - 100px);
+            /* height: 568px; */
+            line-height: calc(768px - 100px - 100px);
+            float: left;
+        }
+
+        .right {
+            background: yellow;
+            width: 824px;
+            height: calc(768px - 100px - 100px);
+            line-height: calc(768px - 100px - 100px);
+            float: right;
+        }
+
+        .footer {
+            /* width: 1024px; */
+            background: skyblue;
+            height: 100px;
+            line-height: 100px;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">Header
+            <!-- <h2>Header</h2> -->
+        </div>
+        <div class="left">Left
+            <!-- <h2>Left</h2> -->
+        </div>
+        <div class="right">Right
+            <!-- <h2>Right</h2> -->
+        </div>
+        <div class="footer">Footer
+            <!-- <h2>Footer</h2> -->
+        </div>
+    </div>
+</body>
+
+</html>

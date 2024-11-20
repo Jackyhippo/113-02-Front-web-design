@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      margin: auto;
+      text-align: center;
+      border-collapse: collapse;
+    }
+
+    table#a {
+      background: #fdd;
+    }
+
+    table#b {
+      background: #ff9;
+    }
+
+    tr {
+      height: 32px;
+    }
+
+    td {
+      border: 1px solid #333;
+    }
+
+    td:nth-child(1) {
+      width: 150px;
+    }
+
+    td:nth-child(2) {
+      width: 350px;
+    }
+
+    td.c {
+      text-align: left;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    /* 消除 input、textarea 下方的空白，讓它們垂直置中 */
+    input,
+    textarea {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <table id="a">
+    <tr>
+      <td>公司名稱</td>
+      <td>公司名稱</td>
+    </tr>
+    <tr>
+      <td>公司名稱</td>
+      <td>service@test.labor.gov.tw</td>
+    </tr>
+    <tr>
+      <td>服務項目</td>
+      <td>網路購物服務</td>
+    </tr>
+  </table>
+  <br>
+  <form>
+    <table id="b">
+      <tr>
+        <td>客戶姓名</td>
+        <td class="c">
+          <input type="text" size="20">
+        </td>
+      </tr>
+      <tr>
+        <td>電子信箱</td>
+        <td class="c">
+          <input type="text" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>意見留言</td>
+        <td class="c">
+          <textarea rows="5" cols="30"></textarea>
+        </td>
+      </tr>
+    </table>
+    <p>
+      <input type="submit" value="送出" onclick="showMsg()">
+      <input type="reset" value="重置">
+    </p>
+  </form>
+
+  <script>
+    function showMsg() {
+      alert(`
+      歡迎蒞臨本網站，您的寶貴意見我們會儘速處理與回覆，謝謝！
+      `)
+    }
+  </script>
+</body>
+
+</html>

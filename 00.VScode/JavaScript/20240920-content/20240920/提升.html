@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 直接使用為宣告也沒給值的東西會出錯
+        // Uncaught ReferenceError: test is not defined
+        // console.log(test)
+
+        // 不能在宣告變數前使用 let 或 const
+        // Uncaught ReferenceError: test is not defined
+        //console.log(test)
+        //let = test
+        //test = 111
+
+        // 不會有錯，因為 test 會綁到 window 內
+        //test = 111
+        //console.log(test)
+
+        // var 可以先使用再宣告，但是宣告前是 undefined
+        // 執行時會把變數宣告提升到使用前
+        console.log(test) // undefined
+        var test
+        test = 111
+
+        // function declaration 會提升
+        hi('AAA')
+        function hi(name) {
+            console.log('hi ' + name)
+        }
+
+        // function expression 會依照 var let const 表現
+        // hi2('BBB')
+        console.log(hi2)
+        var hi2 = function () {
+            console.log('hi ' + name)
+        }
+    </script>
+</body>
+
+</html>

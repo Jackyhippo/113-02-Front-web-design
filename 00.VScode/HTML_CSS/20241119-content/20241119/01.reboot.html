@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap5.1.css">
+</head>
+
+<body style="--bs-body-color:rgb(0, 191, 255);">
+  <div class="container">
+    <h1>lorem</h1>
+    <h1 class="display-1">Display 1</h1>
+    <h1 class="display-2">Display 2</h1>
+    <h1 class="display-3">Display 3</h1>
+    <h1 class="display-4">Display 4</h1>
+    <h1 class="display-5">Display 5</h1>
+    <h1 class="display-6">Display 6</h1>
+
+    <hr>
+
+    <h1>.img-fluid</h1>
+    <h2>max-width 有作用</h2>
+    <div style="width: 500px;height: 300px;border: 1px solid #333;">
+      <img class="img-fluid" src="https://picsum.photos/800/200/?random=10">
+    </div>
+
+    <h2>max-width 沒作用</h2>
+    <div style="width: 500px;height: 300px;border: 1px solid #333;">
+      <img class="img-fluid" src="https://picsum.photos/300/200/?random=10">
+    </div>
+
+    <hr>
+
+    <img class="img-thumbnail" src="https://picsum.photos/800/600/?random=10">
+
+    <hr>
+
+    <h1>對齊圖片</h1>
+    <h2>浮動</h2>
+    <!-- 也可以加上 overflow-hidden 使用 BFC 的方式讓背景回來 -->
+    <div class="bg-primary clearfix ">
+      <img class="rounded float-start" src="https://picsum.photos/300/200/?random=10">
+      <img class="rounded float-end" src="https://picsum.photos/300/200/?random=10">
+    </div>
+
+    <h2>圖片置中1 - 轉型成 block，圖片有自己的寬度，可以用 margin:auto 置中</h2>
+    <img class="rounded-1 mx-auto d-block" src="https://picsum.photos/300/200/?random=10" alt="...">
+
+    <h2>圖片置中2 - 將圖片當作 inline，使用 text-align:center 置中</h2>
+    <div class="text-center bg-info">
+      <img class="rounded-1" src="https://picsum.photos/300/200/?random=10" alt="...">
+    </div>
+
+    <h2>圖片置中3 - display:flex 置中</h2>
+    <div class="d-flex justify-content-center">
+      <img class="rounded-1" src="https://picsum.photos/300/200/?random=10" alt="...">
+    </div>
+
+
+  </div>
+  <script src="./js/bootstrap.bundle5.1.js"></script>
+</body>
+
+</html>

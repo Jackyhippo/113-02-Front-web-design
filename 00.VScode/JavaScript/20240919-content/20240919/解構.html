@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [1, 2, 3, 4]
+        let [one, two, ...otherNumbers] = numbers
+        // let one = numbers[0]
+        // let two = numbers[1]
+        // let otherNumbers = [numbers[2], numbers[3]]
+        // ...剩餘的意思(要放在最後)
+        console.log(one)
+        console.log(two)
+        console.log(otherNumbers)
+
+        const obj = { a: 1, b: 2, c: 3, d: 4 }
+        //let a = obj.a
+        //let b = obj.b
+        //let otherObj = {
+        //    c: obj.c,
+        //    d: obj.d
+        //}
+        let b = 354531354643154
+        // 物件解構變數名稱須和 key 名稱相同
+        // 如果已經存在同名變數時以 : 重新命名
+        let { a, b: bb, ...otherObj } = obj
+        console.log(a)
+        console.log(bb)
+        console.log(otherObj)
+    </script>
+</body>
+
+</html>

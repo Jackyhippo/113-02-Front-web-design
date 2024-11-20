@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const lang = prompt('語言', 'zh-tw')
+
+        if (lang === 'zh-tw') {
+            document.write('中文台灣')
+        } else if (lang === 'ja-jp') {
+            document.write('日文')
+        } else if (lang === 'ko-kr') {
+            document.write('韓文')
+        } else if (lang === 'en' || lang === 'en-us') {
+            document.write('英文')
+        } else {
+            document.write('我不知道。')
+        }
+
+        document.write('<hr>')
+
+        const name =
+            lang === 'zh-tw' ? '中文台灣' :
+                lang === 'ja-jp' ? '日文' :
+                    lang === 'ko-kr' ? '韓文' :
+                        (lang === 'en' || name === 'en-us') ? '英文' : '不要問窩拉，去問別人!!!'
+        document.write(name
+
+        )
+
+        document.write('<hr>')
+
+        switch (lang) {
+            // (變數值) 和 case '值' 比較，符合後遇到break為止即執行
+            case 'zh-tw':
+                document.write('中文台灣')
+                break
+            case 'ja-jp':
+                document.write('日文')
+                break
+            case 'ko-kr':
+                document.write('韓文')
+                break
+            case 'en':
+                document.write('en 英文')
+                break
+            case 'en-us':
+                document.write('en-us 英文')
+                break
+            // default 可以省略
+            default:
+                document.write('就說我不知道了...')
+                break
+        }
+    </script>
+</body>
+
+</html>

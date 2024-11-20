@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const a = 100, b = "100"
+
+        // ==資料型態可不相同
+        if (a == b) {
+            console.log('a == b')
+        } else {
+            console.log('a != b')
+        }
+
+        // === 資料形態要相同
+        if (a === b) {
+            console.log('a === b')
+        } else {
+            console.log('a !== b')
+        }
+
+        const c = 10, d = 20
+        if (c > d) {
+            console.log('c 大於 d')
+        } else {
+            console.log('c 不大於 d')
+        }
+
+        const ok = false
+        // if 的運算概念，一旦()內成立[為true]就會執行裡面的東西
+        // if (ok) ---> if (ok === true)
+        if (ok) {
+            console.log('ok')
+        }
+        // if (!ok) ---> if (ok === false) , ! -> 相反的意思
+        if (!ok) {
+            console.log('not ok')
+        }
+
+        // confirm(訊息)
+        // 跳出確認視窗，收到 true false
+        // {} 中只有一行console的話可以省略
+        const sleep = confir('中午有沒有睡覺')
+        if (sleep)
+            console.log('有睡覺')
+        else
+            console.log('沒有睡覺')
+
+        // ? : 是三元運算值
+        const like = confir('你喜歡 JS 嗎?')
+        console.log(like ? '喜歡' : '不喜歡')
+
+        const pp = confir('喜歡吃雞排嗎')
+        console.log(pp ? 'yes' : 'no')
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Y = parseInt(prompt('西元年'))
+        const M = parseInt(prompt('月'))
+        const D = parseInt(prompt('日'))
+
+        let days = 0
+
+        for (let i = 1; i <= M - 1; i++) {
+            if (i === 2) {
+                // 二月
+                // 公元年份為4的倍數但非100的倍數，為366天閏年。
+                // 公元年份為400的倍數但非4000的倍數，(1600年及2000年)為閏年
+                // https://zh.wikipedia.org/zh-tw/%E9%97%B0%E5%B9%B4
+                if ((Y % 4 === 0 && Y % 100 !== 0) ||
+                    (Y % 400 === 0 && Y % 4000 !== 0)) {
+                    days += 29
+                } else {
+                    days += 28
+                }
+            } else if ((i <= 7 && i % 2 === 1) || (i >= 8 && i % 2 === 0)) {
+                // 七月以前的奇數月和八月以後的偶數月是 31 天
+                days += 31
+            } else {
+                days += 30
+            }
+        }
+
+        days += D
+
+        document.write(days)
+
+    </script>
+</body>
+
+</html>

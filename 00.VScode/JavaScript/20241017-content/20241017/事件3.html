@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="my-btn" class="my-btn">
+  <input type="button" value="my-btn" class="my-btn">
+  <input type="button" value="my-btn" class="my-btn">
+  <input type="button" value="unbind" id="unbind">
+  <script>
+    const hi = () => {
+      alert(1234)
+    }
+
+    const myBtn = document.querySelectorAll('.my-btn')
+    for (const element of myBtn) {
+      // element.addEventListener('click', () => {
+      //   alert(1234)
+      // })
+      // element.addEventListener('事件名稱', function(名稱))
+      element.addEventListener('click', hi)
+    }
+
+    // 解除綁定要跟新增綁定的 function 要是同一個
+    // 雖然()內的 function 一樣，但這不行，要獨立出來寫 function，改成放入 function 的名稱
+    const unbind = document.querySelector('#unbind')
+    unbind.addEventListener('click', () => {
+      for (const element of myBtn) {
+        element.removeEventListener('click', hi)
+      }
+    })
+  </script>
+</body>
+
+</html>

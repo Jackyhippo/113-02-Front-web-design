@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 1.使用 bootstrap 的 css -->
+  <link rel="stylesheet" href="./css/bootstrap5.3.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .container {
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      margin: 1.5rem 0;
+    }
+
+    .d-flex {
+      color: white;
+      background: var(--bs-gray-200);
+      margin-bottom: 1.5rem;
+      height: 240px;
+    }
+
+    .d-flex>:nth-child(1) {
+      background: var(--bs-red);
+    }
+
+    .d-flex>:nth-child(2) {
+      background: var(--bs-orange);
+    }
+
+    .d-flex>:nth-child(3) {
+      background: var(--bs-yellow);
+    }
+
+    .d-flex>:nth-child(4) {
+      background: var(--bs-green);
+    }
+
+    .d-flex>:nth-child(5) {
+      background: var(--bs-cyan);
+    }
+
+    .d-flex>:nth-child(6) {
+      background: var(--bs-purple);
+    }
+
+    .flex-1{
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>flex</h1>
+    <h2>水平方向</h2>
+    <div class="d-flex">
+      <div class="p-2">Flex item 1</div>
+      <div class="p-2">Flex item 2</div>
+      <div class="p-2">Flex item 3</div>
+      <div class="p-2">Flex item 4</div>
+      <div class="p-2">Flex item 5</div>
+      <div class="p-2">Flex item 6</div>
+    </div>
+
+    <div class="d-flex flex-row-reverse">
+      <div class="p-2">Flex item 1</div>
+      <div class="p-2">Flex item 2</div>
+      <div class="p-2">Flex item 3</div>
+    </div>
+
+    <hr>
+
+    <h2>垂直方向</h2>
+    <div class="d-flex flex-column">
+      <div class="p-2">Flex item 1</div>
+      <div class="p-2">Flex item 2</div>
+      <div class="p-2">Flex item 3</div>
+      <div class="p-2">Flex item 4</div>
+      <div class="p-2">Flex item 5</div>
+      <div class="p-2">Flex item 6</div>
+    </div>
+
+    <div class="d-flex flex-column-reverse">
+      <div class="p-2">Flex item 1</div>
+      <div class="p-2">Flex item 2</div>
+      <div class="p-2">Flex item 3</div>
+      <div class="p-2">Flex item 4</div>
+      <div class="p-2">Flex item 5</div>
+      <div class="p-2">Flex item 6</div>
+    </div>
+
+    <hr>
+
+    <h2>斷點使用</h2>
+    <div class="d-flex flex-column flex-sm-row flex-md-column-reverse flex-lg-row-reverse">
+      <div class="p-2">Flex item 1</div>
+      <div class="p-2">Flex item 2</div>
+      <div class="p-2">Flex item 3</div>
+    </div>
+
+    <hr>
+
+    <h2>主軸、次軸對齊</h2>
+    <p>justify-content- {breakpoint} - {value}</p>
+    <p>align-items- {breakpoint} - {value}</p>
+    <div class="d-flex justify-content-end align-items-end justify-content-sm-start align-items-sm-end justify-content-lg-evenly align-items-lg-stretch">
+      <div>Flex item</div>
+      <div>Flex item</div>
+      <div>Flex item</div>
+    </div>
+
+    <hr>
+
+    <h2>自身對齊</h2>
+    <div class="d-flex">
+      <div class="align-self-start">Aligned flex item</div>
+      <div class="align-self-center">Aligned flex item</div>
+      <div class="align-self-end">Aligned flex item</div>
+      <div class="align-self-baseline">Aligned flex item</div>
+      <div class="align-self-stretch">Aligned flex item</div>
+    </div>
+
+    <hr>
+    <h2>填滿</h2>
+    <h3>flex-fill、flex-grow-1 兩個作用相同(flex:1 1 auto;)</h3>
+    <p>當所有欄位內容寬度小於蘭寬時，剩餘空間會平均分配給欄位</p>
+    <div class="d-flex">
+      <div class="p-2 flex-fill">Flex item with a lot of content.Flex item with a lot of content.</div>
+      <div class="p-2 flex-fill">Flex item</div>
+      <div class="p-2 flex-fill">Flex item</div>
+    </div>
+    <p>當內容寬度超過藍寬時，會將空間撐開</p>
+    <div class="d-flex">
+      <div class="p-2 flex-fill">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate id cum quas molestiae hic dolorem officia quos nesciunt! Fugiat magnam iste, tenetur amet, voluptas laudantium obcaecati accusamus aliquam repudiandae eum aliquid corporis quisquam? Nesciunt consequatur maxime iste incidunt sapiente impedit cupiditate, ex ad ut.</div>
+      <div class="p-2 flex-fill">Flex item</div>
+      <div class="p-2 flex-fill">Flex item</div>
+    </div>
+
+    <p>等寬</p>
+    <p>自己創建一個class .flex-1，flex:1</p>
+    <div class="d-flex">
+      <div class="flex-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate id cum quas molestiae hic dolorem officia quos nesciunt! Fugiat magnam iste, tenetur amet, voluptas laudantium obcaecati accusamus aliquam repudiandae eum aliquid corporis quisquam? Nesciunt consequatur maxime iste incidunt sapiente impedit cupiditate, ex ad ut.</div>
+      <div class="flex-1">Flex item</div>
+      <div class="flex-1">Flex item</div>
+    </div>
+
+    <h3>網格系統等寬</h3>
+    <div class="row mx-0">
+      <div class="col bg-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate id cum quas molestiae hic dolorem officia quos nesciunt! Fugiat magnam iste, tenetur amet, voluptas laudantium obcaecati accusamus aliquam repudiandae eum aliquid corporis quisquam? Nesciunt consequatur maxime iste incidunt sapiente impedit cupiditate, ex ad ut.</div>
+      <div class="col bg-success">Flex item</div>
+      <div class="col bg-primary">Flex item</div>
+    </div>
+
+  </div>
+  <!-- 2.使用 bootstrap 的 js，可以讓我們使用元件進行互動 -->
+  <script src="./js/bootstrap.bundle5.3.js"></script>
+</body>
+
+</html>

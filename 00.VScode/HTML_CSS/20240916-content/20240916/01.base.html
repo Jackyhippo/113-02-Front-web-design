@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 寫樣式的方式 2 :外部樣式表 -->
+<link rel="stylesheet" href="./css/style1.css">
+<link rel="stylesheet" href="./css/style2.css">
+<!-- 寫樣式的方式 1 :style 標籤 => 該份文件的專屬樣式 -->
+<style>
+    /* 選擇器有非常多種 */
+    /* 
+        選擇器{ 
+            屬性: 值；
+    }
+    */
+    /* 標籤選擇器 */
+
+    h1 {
+        color: red;
+        background-color: yellow;
+        font-size: 40px;
+    }
+
+    p {
+        color: green;
+    }
+
+    /* 特性:瀏覽器由上至下讀取樣式，同樣的選擇目標，有相同屬性後面的會覆蓋前面的，例如:h1 */
+    /* 群組選擇器 */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: rgb(229, 73, 250);
+    }
+</style>
+
+<body>
+    <!-- 寫樣式的方式 3：行內樣式，該標籤的專屬樣式 -->
+    <h1 style="color: blueviolet;">title 1</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <h1>title 2</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <h1>title 3</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <hr>
+
+    <h1>Hello World</h1>
+    <h2>Hello World</h2>
+    <h3>Hello World</h3>
+    <h4>Hello World</h4>
+    <h5>Hello World</h5>
+    <h6>Hello World</h6>
+
+</body>
+
+</html>

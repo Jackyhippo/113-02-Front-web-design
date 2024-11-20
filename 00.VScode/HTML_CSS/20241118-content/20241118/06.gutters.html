@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap5.3.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Gutters</h1>
+    <p>overflow-hidden 區塊格式化(BFC)，讓 margin 不會泡出去影響其他人</p>
+    <p>row 加上 padding(p-*) 可以多出上下空間。</p>
+  </div>
+  <div class="container overflow-hidden">
+    <div class="row g-5 bg-dark p-3">
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div class="p-3 border bg-light">Custom column padding</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>行列式 gutters</h1>
+  </div>
+  <div class="container overflow-hidden">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 bg-dark p-3">
+      <div class="col">
+        <div class="p-3 border bg-light">Row column</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light">Row column</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light">Row column</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light">Row column</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light">Row column</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light">Row column</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light">Row column</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light">Row column</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light">Row column</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light">Row column</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Gutters test1</h1>
+  </div>
+  <div class="container bg-dark overflow-hidden">
+    <div class="row bg-danger g-4 py-3">
+      <div class="col-6">
+        <div class="border bg-light">
+          <div class="card">
+            <img src="https://picsum.photos/300/200/?random=10" class="card-img-top" class="card-img-top img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="border bg-light">
+          <div class="card">
+            <img src="https://picsum.photos/300/200/?random=10" class="card-img-top" class="card-img-top img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="border bg-light">
+          <div class="card">
+            <img src="https://picsum.photos/300/200/?random=10" class="card-img-top" class="card-img-top img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="border bg-light">
+          <div class="card">
+            <img src="https://picsum.photos/300/200/?random=10" class="card-img-top" class="card-img-top img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr><!-- ---------------------------------------------------------------------------------------- -->
+
+  <div class="container">
+    <h1>Gutters test2</h1>
+  </div>
+  <div class="container bg-dark">
+    <div class="row bg-danger py-3">
+      <div class="col-md-6 mb-4">
+        <div class="border bg-light">
+          <div class="card">
+            <img src="https://picsum.photos/800/600/?random=10" class="card-img-top img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="border bg-light">
+          <div class="card">
+            <img src="https://picsum.photos/800/600/?random=10" class="card-img-top img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4 mb-md-2">
+        <div class="border bg-light">
+          <div class="card">
+            <img src="https://picsum.photos/800/600/?random=10" class="card-img-top img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="border bg-light">
+          <div class="card">
+            <img src="https://picsum.photos/800/600/?random=10" class="card-img-top img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/bootstrap.bundle5.3.js"></script>
+</body>
+
+</html>

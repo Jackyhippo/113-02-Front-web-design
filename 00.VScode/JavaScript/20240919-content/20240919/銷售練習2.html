@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 銷售 1 - 2593
+        // 銷售 2 - 3107
+        // 銷售 3 - 3739
+
+        // 產品 A - 1836
+        // 產品 B - 1920
+        // 產品 C - 1670
+        // 產品 D - 2198
+        // 產品 E - 1815
+
+        const data = [
+            [33, 32, 56, 45, 33],
+            [77, 33, 68, 45, 23],
+            [43, 55, 43, 67, 65]
+        ]
+        const prices = [12, 16, 10, 14, 15]
+        const totalSales = [0, 0, 0]
+        const totalProducts = [0, 0, 0, 0, 0]
+        // console.log(data[0][0])
+        // console.log(data[1][3])
+        for (let i = 0; i < data.length; i++) {
+            console.log('data[i]', i, data[i])
+            for (let j = 0; j < data[i].length; j++) {
+                const total = data[i][j] * prices[j]
+                console.log('data[i][j]', i, j, data[i][j], prices[j], total)
+                totalSales[i] += total
+                totalProducts[j] += total
+            }
+        }
+        console.log(totalSales)
+        console.log(totalProducts)
+        // document.write(${ 銷售員- 1} totle)
+
+        // ========================================================================
+
+        // 分開計算銷售員
+
+        // i = 產品
+        let total = 0
+        for (let i = 0; i < data[0].length; i++) {
+            total += data[0][i] * prices[i]
+        }
+        console.log('銷售員1: ' + total)
+
+        total = 0
+        for (let i = 0; i < data[1].length; i++) {
+            total += data[1][i] * prices[i]
+        }
+        console.log('銷售員2: ' + total)
+
+        // 分開計算產品
+        total = 0
+        for (let i = 0; i < data.length; i++) {
+            total += data[i][0] * prices[0]
+        }
+        console.log('產品A: ' + total)
+    </script>
+</body>
+
+</html>

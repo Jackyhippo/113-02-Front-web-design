@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 75%;
+            margin: auto;
+            border: 1px solid #000;
+            padding: 0 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .box1,
+        .box2,
+        .box3,
+        .box4 {
+            padding: 1rem;
+        }
+
+        .box1 {
+            background: pink;
+        }
+
+        .box2 {
+            background: palegreen;
+            /*
+            position: relative;
+            left: 50px;
+            top: 50px;
+            */
+        }
+
+        .box3 {
+            background: paleturquoise;
+        }
+
+        .box4 {
+            background: palegoldenrod;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>position:relative(相對定位)</h1>
+        <p> 使用位移屬性(top、right、bottom、left) 會以自己原來的位置位移，且保留自身的空間進入定位層，原本位置也不會被別人佔據。 </p>
+        <p> 父元素沒有任何位移屬性，會留在原地不動，這種 reative 的做常作為 adsolute 子元素位移目標的依據。 </p>
+        <p> 進入定位層可以使用 z-index(元素可以遮住元素) </p>
+        <div class="box1">
+            <h1>box1</h1>
+            <p>十二工廠專利功能展開三個所說開展受到，網通痛苦較大壓力中心陽光存款求助高速長期性質即將幻想一起知識，的是成
+                人，估計夫人基本上推出對面妹妹開口唯一大盤不說，看來對於，天堂好多技術笑道內部技能，情形一旦通知中學公里停
+                止受到，百度醫學國務院，一片自己的故障針對。</p>
+        </div>
+        <div class="box2" style="position: relative; left: 50px; top: 50px;">
+            <h1>box2</h1>
+            <p>十二工廠專利功能展開三個所說開展受到，網通痛苦較大壓力中心陽光存款求助高速長期性質即將幻想一起知識，的是成
+                人，估計夫人基本上推出對面妹妹開口唯一大盤不說，看來對於，天堂好多技術笑道內部技能，情形一旦通知中學公里停
+                止受到，百度醫學國務院，一片自己的故障針對。</p>
+        </div>
+        <div class="box3" style="position: relative; right: 50px; bottom: 50px;">
+            <h1>box3</h1>
+            <p>十二工廠專利功能展開三個所說開展受到，網通痛苦較大壓力中心陽光存款求助高速長期性質即將幻想一起知識，的是成
+                人，估計夫人基本上推出對面妹妹開口唯一大盤不說，看來對於，天堂好多技術笑道內部技能，情形一旦通知中學公里停
+                止受到，百度醫學國務院，一片自己的故障針對。</p>
+        </div>
+        <div class="box4">
+            <h1>box4</h1>
+            <p>十二工廠專利功能展開三個所說開展受到，網通痛苦較大壓力中心陽光存款求助高速長期性質即將幻想一起知識，的是成
+                人，估計夫人基本上推出對面妹妹開口唯一大盤不說，看來對於，天堂好多技術笑道內部技能，情形一旦通知中學公里停
+                止受到，百度醫學國務院，一片自己的故障針對。</p>
+        </div>
+    </div>
+
+    <div class="container" style="position: relative;">
+        <h1>position:absolute(絕對定位)</h1>
+        <p>沒有任何移位屬性(top、right、bottom、left)，該元素會脫離正常流向，提升為定位層，後方元素會依據 css 流動的特性流動至絕對定位元素的下方(背絕對定位)元素遮住</p>
+        <p>若祖父元素找不到 absolute、relative、fixed，最後會以初始容器根元素(html)作為位移目標</p>
+        <p>父元素會用 relative 與 子元素 absolute 搭配的原因是，父元素可以維持在原來的位置，而 absolute、fixed 會脫離正常流向。</p>
+        <div class="box1">
+            <h1>box1</h1>
+            <p>十二工廠專利功能展開三個所說開展受到，網通痛苦較大壓力中心陽光存款求助高速長期性質即將幻想一起知識，的是成
+                人，估計夫人基本上推出對面妹妹開口唯一大盤不說，看來對於，天堂好多技術笑道內部技能，情形一旦通知中學公里停
+                止受到，百度醫學國務院，一片自己的故障針對。</p>
+        </div>
+        <div class="box2" style="position: absolute; left: 0; top: 0; width: 300px;">
+            <h1>box2</h1>
+            <p>十二工廠專利功能展開三個所說開展受到，網通痛苦較大壓力中心陽光存款求助高速長期性質即將幻想一起知識，的是成
+                人，估計夫人基本上推出對面妹妹開口唯一大盤不說，看來對於，天堂好多技術笑道內部技能，情形一旦通知中學公里停
+                止受到，百度醫學國務院，一片自己的故障針對。</p>
+        </div>
+        <div class="box3">
+            <h1>box3</h1>
+            <p>十二工廠專利功能展開三個所說開展受到，網通痛苦較大壓力中心陽光存款求助高速長期性質即將幻想一起知識，的是成
+                人，估計夫人基本上推出對面妹妹開口唯一大盤不說，看來對於，天堂好多技術笑道內部技能，情形一旦通知中學公里停
+                止受到，百度醫學國務院，一片自己的故障針對。</p>
+        </div>
+        <div class="box4">
+            <h1>box4</h1>
+            <p>十二工廠專利功能展開三個所說開展受到，網通痛苦較大壓力中心陽光存款求助高速長期性質即將幻想一起知識，的是成
+                人，估計夫人基本上推出對面妹妹開口唯一大盤不說，看來對於，天堂好多技術笑道內部技能，情形一旦通知中學公里停
+                止受到，百度醫學國務院，一片自己的故障針對。</p>
+        </div>
+    </div>
+
+    <div style="position: absolute; left:0; top: 1000px; width:200px;height:300px; background:lightblue;">
+        <p
+            style="position: absolute; right:0; top:-25px; width: 30px; height: 30px;border-radius: 50%; background:deeppink;line-height: 30px;text-align: center;">
+            X</p>
+    </div>
+
+</body>
+
+</html>

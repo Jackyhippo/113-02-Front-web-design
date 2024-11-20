@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 20px;
+            font-family: '標楷體';
+            font-weight: bolder;
+            color: #00f;
+            text-decoration: underline;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        #big {
+            border: 5px solid #00f;
+        }
+
+        .small {
+            width: 60px;
+            height: 45px;
+            border: medium solid #00f;
+        }
+
+        .small:hover {
+            border: medium solid #0ff;
+        }
+    </style>
+</head>
+
+<body>
+    <p>蘭嶼賞魚去</p>
+    <table>
+        <tr>
+            <td colspan="5">
+                <img id="big" src="./0551.jpg" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><img class="small" src="./0551.jpg" alt=""></td>
+            <td><img class="small" src="./0552.jpg" alt=""></td>
+            <td><img class="small" src="./0553.jpg" alt=""></td>
+            <td><img class="small" src="./0554.jpg" alt=""></td>
+            <td><img class="small" src="./0555.jpg" alt=""></td>
+        </tr>
+    </table>
+
+    <script src="../jquery-2.1.4.min.js"></script>
+    <script>
+        $('.small').each(function (index, img) {
+            $(this).click(function () {
+                $('#big').attr('src', `./055${index + 1}.jpg`)
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: "微軟正黑體";
+    }
+
+    /* 繼承視窗的高度 */
+    html,
+    body {
+      height: 100%;
+    }
+
+    section {
+      height: 100%;
+      /* 水平垂直置中 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    section:nth-child(odd) {
+      background: lightblue;
+    }
+
+    section:nth-child(even) {
+      background: lightyellow;
+    }
+
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .dashed {
+      display: inline-block;
+      border: 5px dashed #000;
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .translate {
+      /* 第一個參數是水平移動，第二個參數是垂直移動 */
+      /* px、rem、em、%、... */
+      /* 使用 % 實際會以元素本身的尺寸來計算，ex:width 300px => 50%(150px) */
+      transform: translate(100px, 100px);
+      /* 也可以設定單一方向 */
+      transform: translateX(100px);
+      transform: translateY(100px);
+
+      /* translate 沒有原點，transform-origin */
+    }
+
+    .scale {
+      /* 數值是以倍數顯示，沒有單位 */
+      transform: scale(1.5);
+      transform: scale(2);
+      /* 可以負數，會倒過來 */
+      transform: scale(-0.5);
+      /* 單一方向 */
+      transform: scaleX(3);
+      transform: scaleY(2);
+      /* 改變原點 */
+      /* 預設就是 center(50%)、 center(50%) */
+      /* 關鍵字有 left、right、top、bottom、center */
+      /* 如果省略第二個值，會視為 center(50%) */
+      transform-origin: left center;
+      transform-origin: 100px 300px;
+
+      /* scale、rotate、skew 都可以設定 transform-origin */
+    }
+
+    .rotate {
+      /* 一定要加單位 deg，正為順時針，負為逆時針 */
+      transform: rotate(45deg);
+      transform: rotateX(45deg);
+      transform: rotateY(45deg);
+      transform-origin: left center;
+    }
+
+    .skew {
+      /* 一定要加單位，值一為 X 的傾斜，值二為 Y 的傾斜 */
+      transform: skew(45deg, 0deg);
+      transform: skewX(0deg);
+      transform: skewY(0deg);
+      transform-origin: center center;
+    }
+
+    .more {
+      /* 屬性之間不用逗點 */
+      /* 如果多屬性，函式會由左至右套用，作用順序十分重要，順序不同結果不同 */
+      /* 
+      先旋轉，再移動
+      先移動，再旋轉
+      兩者最終位置不一樣
+       */
+      transform: rotate(45deg) translateX(100px);
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h1>translate(位移)</h1>
+    <div class="dashed">
+      <div class="box translate">translate(位移)</div>
+    </div>
+  </section>
+
+  <section>
+    <h1>scale(縮放)</h1>
+    <div class="dashed">
+      <div class="box scale">scale(縮放)</div>
+    </div>
+  </section>
+
+  <section>
+    <h1>rotate(旋轉)</h1>
+    <div class="dashed">
+      <div class="box rotate">rotate(旋轉)</div>
+    </div>
+  </section>
+
+  <section>
+    <h1>skew(傾斜)</h1>
+    <div class="dashed">
+      <div class="box skew">skew(傾斜)</div>
+    </div>
+  </section>
+
+  <section>
+    <h1>設定多屬性</h1>
+    <div class="dashed">
+      <div class="box more">設定多屬性</div>
+    </div>
+  </section>
+</body>
+
+</html>

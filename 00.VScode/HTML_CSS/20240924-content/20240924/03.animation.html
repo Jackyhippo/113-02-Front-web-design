@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 75%;
+      margin: auto;
+      padding: 1rem;
+      border: 1px solid #333;
+    }
+
+    .wrap {
+      border: 5px dashed #36ac18;
+      margin: 50px;
+      padding: 50px 0;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #000;
+      color: white;
+      line-height: 100px;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    /* 建立動畫 */
+    /* 
+    步驟一，建立一組關鍵影格(keyframes)
+    動畫名稱自取，範例 animation
+    from(0%)
+    to(100%)
+    */
+    @keyframes animation {
+      from {
+        transform: translate(0, 0) rotate(0deg);
+        background: red;
+      }
+
+      20% {
+        transform: translate(70vw, 0) rotate(360deg);
+        background: green;
+      }
+
+      70% {
+        transform: translate(0vw, 0) rotate(-360deg);
+        background: green;
+      }
+
+      to {
+        transform: translate(50vw, 0) rotate(360deg);
+        background: blue;
+      }
+    }
+
+    /* 步驟二，建立一個專用的 class */
+    .animation {
+      /* 設定動畫名稱 */
+      animation-name: animation;
+      /* 設定持續時間 s、ms(毫秒) */
+      animation-duration: 2s;
+      /* 設定播放次數，預設 1次，無限 infinite */
+      animation-iteration-count: 1;
+      /* 設定播放速率 */
+      animation-timing-function: linear;
+      /* 播放的方向
+      normal 正向播放(0%=>100%)
+      reverse 反向播放(100%=>0%)
+      alternate 交替播放(0%=>100%=>0%=>100%)
+      alternate-reverse 先反向、交替播放(100%=>0%=>100%=>0%)
+      */
+      animation-direction: normal;
+      /* 延遲時間 */
+      animation-delay: 1s;
+      /* 填充模式 */
+      /* both 動畫開始在第一幀 0%(紅色)，結束時在最後一幀 100%(藍色) */
+      animation-fill-mode: both;
+      /* 縮寫 */
+      animation: animation 3s 1s 1 linear normal both running;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>動畫(animation)</h1>
+    <p>動畫與轉場的差異:</p>
+    <h2>animation</h2>
+    <ul>
+      <li>可以設定關鍵影格(keyframes)控制動畫進度狀態，產生更複雜的動畫。</li>
+      <li>網頁載入時自動發生，也可以觸發(新增、刪除 class)，還可以循環重複來回播放。</li>
+    </ul>
+    <h2>transition</h2>
+    <p>藉由狀態觸發，是一次性且沒有循環效果，必須重新載觸發一次。</p>
+    <div class="wrap">
+      <div class="box animation"></div>
+    </div>
+  </div>
+</body>
+
+</html>

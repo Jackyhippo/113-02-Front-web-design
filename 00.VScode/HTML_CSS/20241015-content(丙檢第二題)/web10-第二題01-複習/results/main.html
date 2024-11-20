@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #left {
+      width: 280px;
+      height: 460px;
+      border: 1px solid #999;
+      float: left;
+    }
+
+    #left h1 {
+      font-size: 16px;
+    }
+
+    #left th {
+      background: #39f;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    #left td {
+      font-size: 12px;
+      line-height: 2;
+      color: #000;
+    }
+
+    .odd {
+      background: #ffc;
+    }
+
+    .even {
+      background: #ddd;
+    }
+
+    #right {
+      width: 590px;
+      height: 460px;
+      border: 1px solid #999;
+      float: right;
+      background: #333;
+      font-size: 14px;
+      color: #ff0;
+      margin: auto;
+      text-align: center;
+    }
+
+    #big {
+      width: 570px;
+      height: 340px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="left">
+    <h1>最新消息</h1>
+    <table>
+      <tr>
+        <th>主題</th>
+        <th>發布日期</th>
+      </tr>
+      <tr class="odd">
+        <td><img src="../images/0201.png">公告全國技能競賽相關事宜</td>
+        <td>113/10/21</td>
+      </tr>
+      <tr class="even">
+        <td><img src="../images/0201.png">公告即測即評及發證相關事宜</td>
+        <td>113/10/21</td>
+      </tr>
+      <tr class="odd">
+        <td><img src="../images/0201.png">公告網頁設計修題相關事宜</td>
+        <td>113/10/21</td>
+      </tr>
+      <tr class="even">
+        <td><img src="../images/0201.png">公告網路架設應檢相關事宜</td>
+        <td>113/10/21</td>
+      </tr>
+    </table>
+  </div>
+  <div id="right">
+    <table>
+      <tr>
+        <td colspan="4">
+          <img src="../images/0202A.png" id="big">
+        </td>
+      </tr>
+      <tr>
+        <td><img src="../images/0202B.png" class="small"></td>
+        <td><img src="../images/0203B.png" class="small"></td>
+        <td><img src="../images/0204B.png" class="small"></td>
+        <td><img src="../images/0205B.png" class="small"></td>
+      </tr>
+      <tr>
+        <td>第30屆倫敦奧運</td>
+        <td>許淑淨奪舉重銀牌</td>
+        <td>第26屆深圳世大運</td>
+        <td>第27屆喀山世大運</td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="../others/jquery-2.1.4.min.js"></script>
+  <script>
+    $('.small').each(function (index, img) {
+      $(img).click(function () {
+        $('#big').attr('src', `../images/020${index + 2}A.png`)
+      })
+    })
+  </script>
+</body>
+
+</html>

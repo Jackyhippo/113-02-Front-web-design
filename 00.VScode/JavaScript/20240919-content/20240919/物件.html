@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const jdk = {
+            name: '前端技術',
+            students: 20,
+            year: 113,
+            semester: 2,
+            classroom: '1114'
+        }
+
+        document.write(jdk.name + '<br>')
+        document.write(jdk['classroom'] + '<br>')
+        const key = 'students'
+        document.write(jdk[key] + '<br>')
+
+        // 物件不能用 .length 取有幾個 key
+        // 物件 .length 是找名為 length 的 key
+        document.write(jdk.length + '<br>')
+
+        // Object.keys 物件內的 key 取出為陣列
+        console.log(Object.keys(jdk))
+        // Object.keys 物件內的植取出為陣列
+        console.log(Object.values(jdk))
+    </script>
+</body>
+
+</html>

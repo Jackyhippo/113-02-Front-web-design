@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Promise 可以做非同步的東西，可用在需要延遲動作上
+    const pass = confirm('有沒有過丙級')
+
+    // Promise 的邏輯
+    // new Promise((resolve, reject) => {} )
+    // resolve = 成功 = 執行 .then()
+    // reject  = 失敗 = 執行 .catch()
+    const money = new Promise((resolve, reject) => {
+      // 承諾邏輯
+      if (pass) {
+        resolve('得到 5000')
+      } else {
+        // js 語法規定裡面要放錯誤
+        reject(new Error('沒有 5000'))
+      }
+    })
+
+    // 使用承諾
+    money
+      .then(result => {
+        console.log(result)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+      .finally(() => {
+        console.log('結束')
+      })
+  </script>
+</body>
+
+</html>

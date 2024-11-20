@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let text = 'abcdefg'
+    //          0123456
+
+    // 1 .substr(開始位置, 長度)
+    // 開始位置可以放負數，代表倒數，-1 = 倒數第一個字
+    // 長度不寫會取到結尾
+    console.log(text.substr(3, 1))   // d
+    console.log(text.substr(3))      // defg
+    // text.substr(-3, 2)
+    // text.length = 7
+    // -3 => 7 - 3 => 4
+    // text.substr(4, 2)
+    console.log(text.substr(-3, 2))      // ef
+
+    // 2 .substring(開始位置, 結束位置)
+    // 不包含結束位置
+    // 結束位置不寫會取到結尾
+    // 不能用負數
+    console.log(text.substring(2, 5))  //cde
+
+    // 3 .slice(開始位置, 結束位置)
+    // 不包含結束位置
+    // 結束位置不寫會取到結尾
+    // 可以用負數
+    console.log(text.slice(2, 5))  //cde
+    // text.slice(3, 5)
+    console.log(text.slice(-4, -2))  //de
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap5.1.css">
+  <style>
+    .row {
+      background: #eee;
+      margin-bottom: 1rem;
+    }
+
+    .row>*:nth-child(1) {
+      /* var() 使用原生變數 */
+      background: var(--bs-yellow);
+    }
+
+    .row>*:nth-child(2) {
+      background: var(--bs-cyan);
+    }
+
+    .row>*:nth-child(3) {
+      background: var(--bs-pink);
+    }
+
+    .row>*:nth-child(4) {
+      background: var(--bs-teal);
+    }
+
+    .row>*:nth-child(5) {
+      background: var(--bs-purple);
+    }
+
+    .row>*:nth-child(6) {
+      background: var(--bs-gray-500);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>欄(columns)</h1>
+    <p>.row 是 flexbox，因此 .col 欄位是 flex-item，可以使用 bs 提供的彈性盒相關 class 來對齊。</p>
+    <h2>次軸對齊</h2>
+    <h3>align-items-*</h3>
+    <div class="row align-items-start" style="height: 200px;">
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+    <div class="row align-items-center" style="height: 200px;">
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+    <div class="row align-items-end" style="height: 200px;">
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>align-self-*</h3>
+    <div class="row" style="height: 200px;">
+      <div class="col align-self-start">col</div>
+      <div class="col align-self-center">col</div>
+      <div class="col align-self-end">col</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>主軸對齊</h2>
+    <div class="row justify-content-start justify-content-md-center justify-content-lg-end justify-content-xl-between">
+      <div class="col-4">
+        One of two columns
+      </div>
+      <div class="col-4">
+        One of two columns
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Column breaks</h2>
+    <div class="row">
+      <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+      <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+
+      <!-- Force next columns to break to new line -->
+      <div class="w-100"></div>
+
+      <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+      <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <p>d-none 最小尺寸開始消失，四個欄位可以一起判斷</p>
+    <p>d-md-block md尺寸開始出現，由於 div 出現會切開上下，上方、下方要分開判斷</p>
+    <div class="row">
+      <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+      <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+
+      <!-- Force next columns to break to new line at md breakpoint and up -->
+      <div class="w-100 d-none d-md-block"></div>
+
+      <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+      <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h2>排序 order</h2>
+    <div class="row">
+      <div class="col">1</div>
+      <div class="col order-3 order-lg-3">2</div>
+      <div class="col order-4 order-lg-2">3</div>
+      <div class="col order-1 order-lg-1">4</div>
+      <div class="col order-2 order-lg-4">5</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>欄的推移</h2>
+    <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+      <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+    </div>
+    <div class="row justify-content-md-end">
+      <div class="col-md-6">.col-md-6 .offset-md-3</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">1</div>
+      <div class="col-sm-6">2</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>用 Margin 推移</h2>
+    <p>ms-*，指 margin-left，s 表示 start，在 BS4 margin-left 用 ml-*</p>
+    <p>ms-*，指 margin-right，e 表示 end，在 BS4 margin-right 用 mr-*</p>
+    <p>語系不同，所以用 ms-*、ms-* 來表示起始、結束的方向，阿語系是從右側為 start</p>
+    <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto</div>
+      <div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto</div>
+    </div>
+    <div class="row">
+      <div class="col-auto me-auto">.col-auto .me-auto</div>
+      <div class="col-auto">.col-auto</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>獨立 Column class</h2>
+    <p>沒有與 row 配合，col 可以當作一般寬度使用</p>
+    <div class="clearfix">
+      <img src="https://picsum.photos/300/200/?random=10" class="col-md-6 float-md-end mb-3 ms-md-3">
+      <p>
+        A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a
+        few meaningless phrases here to demonstrate how the columns interact here with the floated image.
+      </p>
+      <p>
+        As you can see the paragraphs gracefully wrap around the floated image. Now imagine how this would look with
+        some actual content in here, rather than just this boring placeholder text that goes on and on, but actually
+        conveys no tangible information at. It simply takes up space and should not really be read.
+      </p>
+      <p>
+        And yet, here you are, still persevering in reading this placeholder text, hoping for some more insights, or
+        some hidden easter egg of content. A joke, perhaps. Unfortunately, there's none of that here.
+      </p>
+    </div>
+  </div>
+  <script src="./js/bootstrap.bundle5.1.js"></script>
+</body>
+
+</html>

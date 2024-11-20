@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 1.使用 bootstrap 的 css -->
+  <link rel="stylesheet" href="./css/bootstrap5.3.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <!--
+  overflow-hidden 會做 BFC 的動作
+  https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_display/Block_formatting_context
+  -->
+  <div class="container bg-primary overflow-hidden text-white py-3">
+    <h1>寬度 - 百分比相對於父元素</h1>
+    <div class="w-25 p-3 bg-light text-info mb-3">Width 25%</div>
+    <div class="w-50 p-3 bg-light text-info mb-3">Width 50%</div>
+    <div class="w-75 p-3 bg-light text-info mb-3">Width 75%</div>
+    <div class="w-100 p-3 bg-light text-info mb-3">Width 100%</div>
+    <div class="w-auto p-3 bg-light text-info mb-3">Width auto</div>
+
+
+    <h1>高度</h1>
+    <div class="bg-success" style="height: 100px; font-size: 0px;">
+      <div class="h-25 d-inline-block bg-danger w-20 fs-6">Height 25%</div>
+      <div class="h-50 d-inline-block bg-danger w-20 fs-6">Height 50%</div>
+      <div class="h-75 d-inline-block bg-danger w-20 fs-6">Height 75%</div>
+      <div class="h-100 d-inline-block bg-danger w-20 fs-6">Height 100%</div>
+      <div class="h-auto d-inline-block bg-danger w-20 fs-6">Height auto</div>
+    </div>
+
+    <div class="d-flex bg-success" style="height: 100px;">
+      <div class="h-25  bg-danger w-20">Height 25%</div>
+      <div class="h-50  bg-danger w-20">Height 50%</div>
+      <div class="h-75  bg-danger w-20">Height 75%</div>
+      <div class="h-100  bg-danger w-20">Height 100%</div>
+      <div class="align-self-start  bg-danger w-20">Height auto</div>
+    </div>
+
+    <h1>.mw-100</h1>
+    <p>max-width 當該元素超過父元素寬度時，限制齊寬度 100 的意思</p>
+    <div class="col-6">
+      <img class="mw-100" src="https://picsum.photos/1920/200/?random=10">
+    </div>
+  </div>
+
+  <h1>.vh-100 設定與瀏覽器高度一致</h1>
+  <div class="vh-100 bg-dark"></div>
+
+  <h1>.vw-100 設定與瀏覽器寬度一致</h1>
+  <div class="vw-100 bg-dark text-white">1</div>
+  <!-- 2.使用 bootstrap 的 js，可以讓我們使用元件進行互動 -->
+  <script src="./js/bootstrap.bundle5.3.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // .map(function)
+    // 將每個東西執行 function 的 return 值變成新的陣列(可以用來複製陣列)
+    const numbers = [100, 200, 300]
+    const numbersDouble = numbers.map(value => {
+      return value * 2
+    })
+    console.log(numbers, numbersDouble)
+
+    // .reduce((累計值, 現在值) => {}, 初始值)
+    // 初始值預設是陣列內第一個東西
+    const numbers2 = [100, 200, 300, 400, 500]
+    const numbers2Total = numbers2.reduce((total, value) => {
+      console.log(total, value)
+      // reture 的值會回到total 去做下一次累加運算
+      return total + value
+    })
+    console.log(numbers2Total)
+
+    // .sort((a, b) => {})
+    // 兩兩比較，a = 後面的值，b = 前面的值
+    // return 0 --> 順序不變
+    // return < 0 --> a在前
+    // return > 0 --> b在前
+    // return a - b --> 小到大
+    // return b - a --> 大到小
+    const numbers3 = [1, 100, 50, 114514, 1919810, 123456789, 1234]
+    numbers3.sort((a, b) => {
+      console.log(a, b)
+      return b - a
+    })
+    console.log(numbers3)
+
+    const texts = ['a', '一', 'h', '二', 'c', '三', 'u', '四', 'd']
+    texts.sort((a, b) => {
+      // a.localeCompare(b, 語言名稱) 比較文字的編碼順序
+      // a 在前 --> -1
+      // b 在前 --> 1
+      // 相等 --> 0
+      // '區域編碼'的不同，最後比較結果也會有差異，例如:'三' => 'en' > 'zh-tw'
+      return a.localeCompare(b, 'zh-tw')
+    })
+    console.log(texts)
+  </script>
+</body>
+
+</html>

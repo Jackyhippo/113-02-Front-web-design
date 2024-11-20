@@ -1,0 +1,5 @@
+引入 "axios"
+
+F1 > cdnjs:Search for libraries > axios(axios Promise based HTTP client for the browser and node.js)
+
+> 1.7.7 > axios.min.js > lnsert into document

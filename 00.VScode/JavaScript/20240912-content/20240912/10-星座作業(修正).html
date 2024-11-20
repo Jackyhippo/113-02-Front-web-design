@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const name = prompt('姓名', '請輸入名字')
+        const month = prompt('出生月份', '1月')
+        const day = prompt('出生日期', '1日')
+
+        let sign = ''
+
+        if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+            sign = '牡羊座'
+        } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+            sign = '金牛座'
+        } else if ((month == 5 && day >= 21) || (month == 6 && day <= 21)) {
+            sign = '雙子座'
+        } else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+            sign = '巨蟹座'
+        }
+
+        document.write('name' + '你的星座是' + sign)
+    </script>
+</body>
+
+</html>

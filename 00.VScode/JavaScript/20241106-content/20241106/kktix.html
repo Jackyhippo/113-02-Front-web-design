@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      margin: auto;
+      text-align: center;
+      /* width: 100%; */
+      border: 1px solid #000;
+    }
+
+    td {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>title</td>
+      <td>summary</td>
+      <td>content</td>
+      <td>author</td>
+    </tr>
+  </table>
+  <table id="table"></table>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js'
+    integrity='sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=='
+    crossorigin='anonymous'></script>
+  <script>
+    const table = document.getElementById('table');
+    (async () => {
+      try {
+        const { data } = await axios.get('https://kktix.com/events.json')
+        for (const event of data.entry) {
+          // console.log(event.title)
+          table.insertAdjacentHTML('beforeend', `
+          <tr>
+            <td>${event.title}</td>
+            <td>${event.summary}</td>
+            <td>${event.content}</td>
+            <td>
+              <a href="${event.author.uri}" target="_blank">
+                ${event.author.name}
+                </a>
+                </td>
+                </tr>
+                `)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    })()
+
+    // -------------------------------------------------------------------------------------------------------
+
+    // document.write('<table border ="1" align="left">')
+    // document.write('<tr>')
+    // for (i = 0; i <= length; i++) {
+    //   const get = async () => {
+    //     try {
+    //       const response = await axios.get('https://kktix.com/events.json')
+    //       const title = response.data.entry[0].title
+    //       console.log(response.data.entry[0].title)
+    //       document.write(`${title} <br>`)
+    //       const summary = response.data.entry[0].summary
+    //       console.log(response.data.entry[0].summary)
+    //       document.write(summary)
+    //       // document.write(`<td border="1">${title}</td> <td border="1">${summary}</td>`)
+    //     } catch (error) {
+    //       console.log(error)
+    //     }
+    //   }
+    //   get()
+    // }
+    // document.write('</tr>')
+    // document.write('</table>')
+  </script>
+</body>
+
+</html>
