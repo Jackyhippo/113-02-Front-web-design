@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!--
+    當偵測事件 apple 事件發生時
+    事件物件會是元件帶出來的資料
+    -->
+    <Plus :data="number" @apple="number = $event"></Plus>
+    <!-- v-model 這邊是雙向綁定 -->
+    <plus-plus v-model:data="number"></plus-plus>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script type="text/x-template" id="plus">
+    <input type="button" :value="data" @click="plus">
+  </script>
+  <script type="text/x-template" id="plusplus">
+    <input type="button" :value="d" @click="d += 100">
+  </script>
+  <script>
+    const { createApp, ref, computed } = Vue
+    createApp({
+      setup () {
+        const number = ref(100)
+        return { number }
+      }
+    })
+
+      .component('Plus',{
+        template:'#plus',
+        props:['data'],
+        // methods: {
+        //   plus () {
+        //     this.$emit('apple', props.data + 100)
+        //   }
+        // },
+        setup(props, { emit }) {
+          const plus = () => {
+            // console.log(ctx)
+            // props 唯獨，不能直接修改
+            // props.data += 100
+
+            // emit 觸發一個自訂的事件，把資料傳出去，告訴外層修改資料
+            // 只能傳一個資料，多個資料要用{}包起來、[]陣列起來
+            emit('apple', props.data + 100)
+          }
+          return{ plus }
+        }
+      })
+
+      .component('PlusPlus',{
+        template: '#plusplus',
+        props:['data'],
+        setup (props, { emit }) {
+          const d = computed({
+            // 資料如何產生
+            get () {
+              return props.data
+            },
+            // 修改值的時候怎麼處理
+            set (value) {
+              // 配合 v-model(雙向綁定) 使用的固定格式
+              // emit(update:prop名, 修改的值)
+              emit('update:data', value)
+            }
+          })
+          return { d }
+        }
+      })
+      
+      .mount('#app')
+  </script>
+</body>
+
+</html>
