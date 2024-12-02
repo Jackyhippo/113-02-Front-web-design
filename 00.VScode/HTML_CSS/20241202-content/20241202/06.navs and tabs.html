@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 1.使用 bootstrap 的 css -->
+  <link rel="stylesheet" href="./css/bootstrap5.3.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 tabindex="1">導覽與頁籤</h1>
+    <div class="row">
+      <div class="col-12">
+        <h2>用列表 ul 與 li 設計的導覽</h2>
+        <ul class="nav">
+          <li class="nav-item">
+            <a tabindex="-1" class="nav-link active" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12">
+        <h2 tabindex="2">用 nav 設計的導覽</h2>
+        <nav class="nav">
+          <a class="nav-link active" aria-current="page" href="#">Active</a>
+          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </nav>
+      </div>
+      <div class="col-12">
+        <h2>因為 .nav 彈性盒，所以彈性盒相關屬性都可以使用，不用再 .d-flex</h2>
+        <nav class="nav justify-content-center bg-light">
+          <a class="nav-link active" aria-current="page" href="#">Active</a>
+          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-auto">
+        <h3 tabindex="3">分頁標籤</h3>
+        <p>加上 .nav-tabs</p>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-auto">
+        <h3 tabindex="-1">膠囊標籤</h3>
+        <p>加上 .nav-pills</p>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h2>填充和對齊</h2>
+    <div class="row">
+      <div class="col-12">
+        <h3>1. .nav-fill欄位沒有等寬</h3>
+        <p>每個項目左右的空間都會分配一樣，但每個欄寬不會是均寬，例如第二個項目比較寬。</p>
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Much longer nav link. Lorem, ipsum dolor.</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 mt-5">
+        <h3>.nav-tabs</h3>
+        <ul class="nav nav-tabs nav-fill">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Much longer nav link. Lorem, ipsum dolor.</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 mt-5">
+        <h3>2.欄位等寬 .nav-justified</h3>
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Much longer nav link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active disabled">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>JavaScript 行為</h2>
+    <ul class="nav nav-tabs" id="myTab">
+      <li class="nav-item">
+        <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button">Home</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+          type="button">Profile</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+          type="button">Contact</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show" id="home">
+        多麼精華對我相同企業印刷兄弟翻譯特別，意義求助國際設定共享版，一面動漫求職說是企業主演動畫標題不懂畢業生立場概念，我
+        國只需早上認識通過用途動作團隊污染權力，態度車輛供應外觀買了證書自己收費百姓舉報加。</div>
+      <div class="tab-pane fade active show" id="profile">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+        fuga
+        velit
+        id reiciendis ullam alias impedit, molestias et facilis numquam consequuntur tempora ea, fugiat dolores nesciunt
+        esse harum. Velit molestiae vero accusantium doloremque quas adipisci, excepturi dicta temporibus amet molestias
+        voluptatem ipsum ea voluptatum non ab modi, cumque ratione autem minus corrupti! Ratione ducimus alias sed
+        minima soluta expedita nam quam iste amet, fuga minus totam. Ad veritatis reprehenderit doloremque voluptas
+        neque, corporis autem, in nemo ab eius quod sequi repellat possimus labore obcaecati, officia deleniti aliquam?
+        Provident fugit, quibusdam at, tenetur ipsum ad pariatur autem beatae eveniet optio sunt.</div>
+      <div class="tab-pane fade" id="contact">儀器阿摩斯提問空調大多數那裡出台甚至，參數高中請問廣泛臉色如果你，馬上具備想想是有，立即笑着當時家。
+      </div>
+    </div>
+  </div>
+  <!-- 2.使用 bootstrap 的 js，可以讓我們使用元件進行互動 -->
+  <script src="./js/bootstrap.bundle5.3.js"></script>
+</body>
+
+</html>

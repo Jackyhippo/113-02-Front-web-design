@@ -1,0 +1,28 @@
+:root {
+  --bs-orange-rgb: 255, 165, 0;
+  --bs-gradient: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.1));
+  --bs-box-shadow: 0 0.5rem 1rem rgba(9, 54, 255, 0.15);
+  --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(35, 187, 14, 0.795);
+  --bs-box-shadow-lg: 0 1rem 3rem rgba(155, 0, 0, 0.175);
+}
+
+.bg-opacity-85 {
+  --bs-bg-opacity: 0.85;
+}
+
+.bg-orange {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-orange-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.border-10 {
+  border-width: 10px !important;
+}
+
+.lh-Xl {
+	line-height: 3 !important;
+}
+
+.w-20 {
+	width: 20% !important;
+}
