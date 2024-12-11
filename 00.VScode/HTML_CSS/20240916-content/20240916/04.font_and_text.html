@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 設定 google font 字形的 link -->
+    <link href=" https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            /* 文件預設字體大小是16px */
+            font-size: 16px;
+        }
+
+        /* 也可以用 :root 選擇到 html，:root 是偽類選擇器的一種 */
+        :root {
+            font-size: 16px;
+        }
+
+        body {
+            /* 頁面預設的字形，寫在body裡面 */
+            font-family: '微軟正黑體';
+        }
+
+        .font-style {
+            /* 字形,如果對方有微軟正黑體就使用，沒有會依序檢查字形下去 */
+            font-family: '微軟正黑體', Verdana, Geneva, Tahoma, sans-serif;
+            /* 字體大小 */
+            font-size: 30px;
+            /* 斜體 */
+            font-style: italic;
+            /* 粗體，還可以用 100~900 去表示字體粗細 */
+            font-weight: bold;
+        }
+
+        /* 定義字形，需要字體檔案 */
+        @font-face {
+            font-family: myFont;
+            src: url('./Adine\ Kirnberg.ttf'), url('waltograph42.otf'), url(./Antro_Vectra_Bolder.otf);
+
+        }
+
+        /* 使用自訂義字體 */
+        .font-set {
+            font-family: 'myFont';
+            font-size: 50px;
+        }
+
+        /* 使用google font */
+        .google-font {
+            font-family: "Londrina Solid", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 40px;
+        }
+
+        .noto-sans-chinese {
+            font-family: "Noto Sans TC", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .text-style {
+            /* 設定文字、inline、inline-block 的對其方式Left， */
+            text-align: center;
+            /* none、underline、overline、Line-through */
+            text-decoration: underline;
+            /* 縮排 */
+            text-indent: 50px;
+            /* 大小寫uppercase、lowercase、capitalize */
+            text-transform: uppercase;
+            /* 文字陰影 */
+            /* 水平位移(+為右，-為左) 垂直位移(+為下，-為上) 陰影模糊半徑 顏色 */
+            text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+            /* 單字之間的間隔(只for英文) */
+            word-spacing: 16px;
+            /* 字母之間的間隔 */
+            letter-spacing: 8px;
+            /* 行高，可以用單位或倍數去設定 */
+            /*font-size: 30px;*/
+            line-height: 32px;
+            line-height: 2;
+        }
+
+        /* 設定連結狀態的樣式 */
+        a {
+            color: green;
+        }
+
+        /* love hate */
+        /* lv ha */
+
+        /* 連結初始狀態 */
+        a:link {
+            /*text-decoration: none;*/
+            color: crimson;
+            font-size: 20px;
+        }
+
+        /* 連結拜訪過後的狀態 */
+        a:visited {
+            color: gray;
+        }
+
+        /* 連結滑入狀態 */
+        a:hover {
+            font-size: 30px;
+            color: darkgoldenrod;
+            text-decoration: underline;
+        }
+
+        /* 連結點擊時的狀態 */
+        a:active {
+            color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>1.Font 樣式</h1>
+    <p class="font-style">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius provident optio quidem nemo exercitationem
+        recusandae! Beatae dicta culpa aperiam ea vero ipsa eos debitis ad. Culpa sint assumenda et officiis.
+    </p>
+
+    <hr>
+
+    <h2>自訂字形</h2>
+    <p class="font-set">Lorem ipsum dolor sit amet.</p>
+
+    <hr>
+
+    <h2>Google Fonts</h2>
+    <p class="google-font">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, molestias.</p>
+    <p class="noto-sans-chinese">指標健康，上下有着。</p>
+
+    <hr>
+
+    <h1>2.Text 樣式設定</h1>
+    <div class="text-style">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius voluptatem ut quia eveniet voluptatibus quas!
+        Nemo, consectetur? Aliquam facere earum, cumque eum facilis consequuntur commodi officiis? Officia quasi esse
+        neque?
+    </div>
+
+    <h1>可以被 text-align 去對其三種類型:</h1>
+    <!-- 文字 -->
+    <div style="text-align:center;">
+        Lorem ipsum dolor sit amet.
+    </div>
+
+    <!-- inline -->
+    <div style="text-align: center;">
+        <a href="#">Lorem ipsum dolor sit amet.</a>
+    </div>
+
+    <!-- inline-block -->
+    <div style="text-align: center;">
+        <button>Lorem ipsum dolor sit amet.</button>
+    </div>
+
+    <!-- 圖片 -->
+    <div style="text-align: center;">
+        <img src="" alt="https://picsum.photos/100/100/?random=10">
+    </div>
+    <!-- div 本身是一個 block，父元素無法用 text-align 去做對齊 -->
+    <div style="height:100px; width: 100px; background:Red;"></div>
+    <div style="text-align: center;">
+
+    </div>
+
+    <hr>
+
+    <h1>3.連結顏色狀態得變化</h1>
+    <a href="#">Google</a>
+
+    <hr>
+
+    <h1>4. rem 與 em 兩個單位的差異</h1>
+    <ul>
+        <li>文件字體預設大小為 16px，也就是 1rem。</li>
+        <li>:root 指的是 html 根元素。</li>
+    </ul>
+
+    <h2>rem</h2>
+    <p>rem 為 root font-size 的倍數</p>
+    <div style="font-size: 1rem;">
+        font
+        <div style="font-size: 2rem;">
+            font
+            <div style="font-size: 3rem;">font</div>
+        </div>
+    </div>
+
+    <h2>em</h2>
+    <p>em 需要找父層或祖先層 font-size 的倍數</p>
+    <div style="font-size: 1em;">
+        font
+        <div style="font-size: 2em;">
+            font
+            <div style="font-size: 3em;">font</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

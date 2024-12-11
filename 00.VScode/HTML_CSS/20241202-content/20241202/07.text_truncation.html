@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 1.使用 bootstrap 的 css -->
+  <link rel="stylesheet" href="./css/bootstrap5.3.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .text-truncate-2 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      display: -webkit-box;
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>文字截斷</h1>
+    <h2>bootstrap 提供單行截斷</h2>
+    <div class="row">
+      <div class="col-2 text-truncate bg-primary text-white">
+        This text is quite long, and will be truncated once displayed.
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4 text-truncate bg-primary text-white">
+        This text is quite long, and will be truncated once displayed.
+      </div>
+    </div>
+    <h2>多行文字截斷</h2>
+    <div style="width: 200px;">
+      <p class="text-truncate-2">
+        轉貼聽到讓我們獲得不在相關圖片優勢查看困難，選手當地答應每次年代實驗人
+        間還能強化執行而言團結上帝青年，要有一下性能教學本類內容郵遞區號，女人
+        生存頻率針對所謂採訪可憐轉貼精品贏得家裡綜合大哥列表，江湖。
+      </p>
+    </div>
+  </div>
+  <!-- 2.使用 bootstrap 的 js，可以讓我們使用元件進行互動 -->
+  <script src="./js/bootstrap.bundle5.3.js"></script>
+</body>
+
+</html>

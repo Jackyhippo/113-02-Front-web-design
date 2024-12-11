@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .box-shadow {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .drop-shadow {
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    }
+
+    .pica {
+      transition: 0.5s;
+    }
+
+    .pica:hover {
+      filter: hue-rotate(120deg);
+    }
+
+    .animation {
+      /* animation: changecolor 10s infinite; */
+    }
+
+    @keyframes changecolor {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    .bigbox {
+      width: 100%;
+      height: 500px;
+      background: url("https://picsum.photos/300/200/?random=10") no-repeat center/cover;
+      position: relative;
+      transition: 0.5s;
+      overflow: hidden;
+    }
+
+    .smallbox {
+      width: 100px;
+      height: 500px;
+      border: 1px solid #fff;
+      backdrop-filter: grayscale(100%);
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: 0.5s;
+    }
+
+    .bigbox::before {
+      content: "";
+      width: 100px;
+      height: 500px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      backdrop-filter: hue-rotate(120deg);
+      border: 1px solid #fff;
+      transition: 0.5s;
+    }
+
+    .bigbox:hover::before {
+      width: 100%;
+    }
+
+    .bigbox:hover .smallbox {
+      width: 100%;
+    }
+
+    .content {
+      font-size: 3rem;
+      color: white;
+      width: 300px;
+      height: 200px;
+      line-height: 200px;
+      text-align: center;
+      background-color: #000;
+      position: absolute;
+      left: 50%;
+      bottom: -100%;
+      transform: translate(-50%, 0);
+      transition: 0.5s;
+    }
+
+    .bigbox:hover .content {
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box box-shadow">
+    <img src="./pica.png">
+  </div>
+
+  <div class="box drop-shadow">
+    <img src="./pica.png">
+  </div>
+
+  <hr>
+
+  <div class="box" style="filter:grayscale(100%)">
+    <img src="./pica.png">
+  </div>
+
+  <div class="box" style="filter:hue-rotate(360deg)">
+    <img src="./pica.png">
+  </div>
+
+  <div class="box" style="filter:blur(10px)">
+    <img src="./pica.png">
+  </div>
+
+  <div class="box pica animation">
+    <img src="./pica.png">
+  </div>
+
+  <hr>
+
+  <div class="bigbox">
+    <div class="content">Hello</div>
+    <div class="smallbox"></div>
+  </div>
+</body>
+
+</html>

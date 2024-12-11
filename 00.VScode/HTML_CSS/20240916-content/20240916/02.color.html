@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>使用顏色名稱</h1>
+    <p style="color: red;">Lorem ipsum dolor sit amet.</p>
+
+    <h1>使用 16 進位色碼</h1>
+    <!-- 
+    0~9, A~F => 10~15
+    ff => 15*1 + 15*16 = 255
+    -->
+    <p style="color: #ff0000;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #00ff00;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #0000ff;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #ffffff;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #000000;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #777777;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #333333;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #eeeeee;">Lorem ipsum dolor sit amet consectetur.</p>
+    <!-- 也可以八碼 -->
+    <p style="color: #ff000077;">Lorem ipsum dolor sit amet consectetur.</p>
+
+    <hr>
+
+    <h2>兩兩相同可以只寫一個</h2>
+    <p style="color: #f00;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #0f0;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #00f;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #fff;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #000;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #777;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #333;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #eee;">Lorem ipsum dolor sit amet consectetur.</p>
+    <p style="color: #987;">Lorem ipsum dolor sit amet consectetur.</p>
+
+    <hr>
+
+    <h2>使用 rgb() 或 rgba ()</h2>
+    <!-- rgb(r, g, b) 10 進位數字0~255 -->
+    <p style="color: rgb(255, 0, 0);">Lorem ipsum dolor sit amet consectetur.</p>
+    <!-- 多一個值是 alpha 透明度 0.1~1 -->
+    <p style="color: rgb(255, 0, 0,0.5);">Lorem ipsum dolor sit amet consectetur.</p>
+    <!-- 四值，用空格分開，/區分透明度 -->
+    <p style="color: rgb(255 0 0 / 0.5);">Lorem ipsum dolor sit amet consectetur.</p>
+
+</body>
+
+</html>

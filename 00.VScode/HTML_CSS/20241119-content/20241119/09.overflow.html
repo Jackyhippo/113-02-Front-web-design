@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 1.使用 bootstrap 的 css -->
+  <link rel="stylesheet" href="./css/bootstrap5.3.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      border: 5px solid #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>overflow</h1>
+    <div class="row">
+      <div class="col">
+        <div class="box overflow-auto">
+          <h2>overflow-auto</h2>
+          <h3>自動偵測內容寬度或高度是否溢出而出現卷軸</h3>
+          <p style="width: 500px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti totam iste maiores odio cum, at optio
+            vitae itaque doloremque aperiam! Nemo nam necessitatibus odit nostrum vero ad eum, voluptas molestias
+            distinctio cum sit harum tempore officia numquam quas sapiente. At soluta obcaecati repellendus minima.
+            Distinctio fugiat alias obcaecati inventore. Dolore?
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="box overflow-hidden">
+          <h2>overflow-hidden</h2>
+          <h3>溢出部分會被裁切掉</h3>
+          <p style="width: 500px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti totam iste maiores odio cum, at optio
+            vitae itaque doloremque aperiam! Nemo nam necessitatibus odit nostrum vero ad eum, voluptas molestias
+            distinctio cum sit harum tempore officia numquam quas sapiente. At soluta obcaecati repellendus minima.
+            Distinctio fugiat alias obcaecati inventore. Dolore?
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="box overflow-visible">
+          <h2>overflow-visible</h2>
+          <h3>預設值</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti totam iste maiores odio cum, at optio
+            vitae itaque doloremque aperiam! Nemo nam necessitatibus odit nostrum vero ad eum, voluptas molestias
+            distinctio cum sit harum tempore officia numquam quas sapiente. At soluta obcaecati repellendus minima.
+            Distinctio fugiat alias obcaecati inventore. Dolore?
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="box overflow-scroll">
+          <h2>overflow-scroll</h2>
+          <h3>不管有沒有溢出，卷軸介面都會顯示，再判斷哪一邊溢出可以捲動</h3>
+          <p style="width: 500px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti totam iste maiores odio cum, at optio
+            vitae itaque doloremque aperiam! Nemo nam necessitatibus odit nostrum vero ad eum, voluptas molestias
+            distinctio cum sit harum tempore officia numquam quas sapiente. At soluta obcaecati repellendus minima.
+            Distinctio fugiat alias obcaecati inventore. Dolore?
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 2.使用 bootstrap 的 js，可以讓我們使用元件進行互動 -->
+  <script src="./js/bootstrap.bundle5.3.js"></script>
+</body>
+
+</html>

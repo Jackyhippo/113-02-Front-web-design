@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 1.使用 bootstrap 的 css -->
+  <link rel="stylesheet" href="./css/bootstrap5.3.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="container mb-5">
+    <h1>卡片</h1>
+    <p>卡片是 flexbox 、垂直流向(flex-direction: column)，具有相對定位</p>
+    <div class="row">
+      <div class="col">
+        <h2>.rounded-0 沒有圓角</h2>
+        <div class="card rounded-0 shadow-sm">
+          <img src="https://picsum.photos/300/200/?random=10" class="card-img-top rounded-0">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-info">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h2>.card-img-top 有圓角</h2>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://picsum.photos/300/200/?random=10" class="card-img-top">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h2>.card 有相對定位</h2>
+        <div class="card">
+          <img src="https://picsum.photos/300/200/?random=10" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">子元素可以使用絕對定位而不會脫離</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          <button type="button" class="btn-close position-absolute top-0 end-0 bg-white"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>可以與其他可能的元件組合使用</h1>
+    <h2>與 list-group 搭配使用</h2>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            Featured
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="https://picsum.photos/300/200/?random=10" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>圖片 overlay</h1>
+    <div class="row bg-dark">
+      <div class="col-sm-6 bg-info">
+        <div class="card bg-dark text-white h-100">
+          <img src="https://picsum.photos/300/200/?random=10" class="card-img h-100 w-100 object-fit-cover">
+          <div class="card-img-overlay">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor earum dicta, explicabo
+              quis eligendi itaque, mollitia dolores architecto maiores soluta quas, adipisci quasi commodi odio!
+              Praesentium sit laborum dolorum sapiente. Ratione qui blanditiis tenetur adipisci architecto quaerat eum
+              quam nobis dignissimos fugit, illo sunt, quia, deleniti voluptatibus! Beatae accusantium voluptatum atque
+              esse dolores doloremque tenetur nisi, cumque, ipsa facere eveniet? Facilis natus consequatur nulla
+              deleniti repudiandae voluptatibus perferendis odit totam animi distinctio, cumque nobis itaque. Sequi
+              natus voluptatum voluptas fuga esse. Voluptatem nisi repellat beatae ullam porro officia ad dolore est, in
+              tenetur, excepturi tempora quaerat aut architecto molestiae fugiat dolor illum itaque. Est nemo beatae,
+              quas nihil maxime libero aliquam saepe a sed vero voluptas dolores perspiciatis vitae at expedita ut illo
+              cum ducimus non vel. Dignissimos debitis libero vero et aliquam natus nesciunt, repudiandae earum vitae
+              pariatur inventore id, nam ea cumque minus enim cupiditate reprehenderit dolores maxime corrupti, iure
+              nobis. Minima autem id obcaecati, quaerat voluptatem earum dignissimos, corrupti iste perspiciatis at
+              aliquid, explicabo distinctio laboriosam? Ex non excepturi ut atque, doloribus explicabo at fuga corrupti
+              laudantium accusamus temporibus, sed, sit nihil asperiores quia! Aperiam voluptate soluta, vitae numquam
+              voluptatem rerum veniam repellat, maiores animi fugiat nihil, itaque recusandae quod iste deleniti sunt
+              necessitatibus id aspernatur minima maxime ut culpa. Voluptates perspiciatis delectus sapiente debitis
+              nobis. Exercitationem minima expedita veniam aliquid cupiditate eum iusto id deserunt error et dignissimos
+              aspernatur laborum temporibus impedit, reiciendis consectetur pariatur veritatis aperiam. Cupiditate
+              mollitia veniam ea! Maiores qui vero iste aspernatur.</p>
+            <p class="card-text">Last updated 3 mins ago</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card bg-dark text-white h-100">
+          <div class="card-body"
+            style="background: url('https://picsum.photos/300/200/?random=10')no-repeat center/cover;">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid fugiat nulla ducimus,
+              neque, id ipsam unde assumenda dolor, ad dolore error tempore nam magni quaerat magnam porro quam!
+              Voluptates perferendis, quas animi repellendus odio aliquid alias doloribus? Minus neque natus quae
+              doloremque praesentium. Necessitatibus fugiat quia fugit architecto inventore? Perspiciatis perferendis ea
+              nemo quisquam, culpa inventore tenetur sequi iste! Nihil ea ipsa est illo nesciunt adipisci sint ex natus
+              vitae voluptas culpa esse dolores assumenda quia nostrum, aliquam, expedita quae sunt. Aliquid incidunt
+              iste rerum error animi, natus laudantium ipsam voluptate minima hic ullam blanditiis temporibus, culpa
+              repellat, itaque labore deserunt. Mollitia eveniet dolor esse laboriosam et sint voluptatem culpa rem
+              molestias iure tempora fuga numquam voluptatum totam, labore voluptas ducimus quae. Amet adipisci ullam
+              rerum ratione officiis deleniti dolore pariatur. Quia ea impedit consequuntur exercitationem reprehenderit
+              sequi ullam officia odio ab. Cupiditate consectetur alias rem cum porro delectus, quisquam quas,
+              blanditiis doloribus, odio non! Nesciunt soluta optio autem vitae et est rem dolore! Ratione sed facere,
+              sequi tenetur quibusdam blanditiis quam, officia laboriosam quisquam nihil id ipsam nemo? Unde nihil dicta
+              ad totam culpa. Ipsa deserunt, officia voluptate ratione quibusdam sapiente at eveniet tempora laboriosam
+              voluptatem reiciendis odio incidunt sunt facere quisquam nihil consectetur sit aliquam, et, rem animi
+              rerum. Adipisci deserunt atque facere voluptate quibusdam. Ea sit enim iusto, ipsa aspernatur veritatis
+              nesciunt libero, numquam eligendi reiciendis fugit quod est. Repellat, iure labore fuga deserunt dolore
+              obcaecati numquam soluta consequatur quia doloribus aut id ratione officia. Eum alias incidunt
+              exercitationem repellat. Pariatur nobis vel doloribus, ab laboriosam quam cumque aliquid dignissimos
+              asperiores autem totam rerum reiciendis temporibus assumenda magnam fugiat ex iste repellendus expedita!
+              Aut et eveniet alias odio quod consequuntur vel impedit vero inventore, incidunt quibusdam quaerat iure
+              hic deleniti blanditiis numquam pariatur provident fugiat. Unde, aut.</p>
+            <p class="card-text">Last updated 3 mins ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>水平卡片</h1>
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="https://picsum.photos/300/300/?random=10" class="img-fluid rounded-start w-100">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 2.使用 bootstrap 的 js，可以讓我們使用元件進行互動 -->
+  <script src="./js/bootstrap.bundle5.3.js"></script>
+</body>
+
+</html>

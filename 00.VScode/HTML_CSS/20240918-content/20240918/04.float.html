@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 300px;
+        }
+
+        .container {
+            width: 75%;
+            margin: 2rem auto;
+            background: #ccc;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        .float-left {
+            float: left;
+            margin: 5px;
+        }
+
+        .float-right {
+            /* 自動轉型 block */
+            float: right;
+            width: 200px;
+            height: 200px;
+            background: lemonchiffon;
+        }
+
+        .menu {
+            background: lightgreen;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            /* 
+            BFC 區塊格式化上下文
+            BFC 可以重新定義元素的邊界、清除浮動、防止邊距重疊等，
+            overflow: hidden 是一個常見的觸發 BFC 的方式，
+            讓高度塌陷的元素重新找到自己的高度(找回背景)。
+            */
+            overflow: hidden;
+            width: 50%;
+            margin: auto;
+        }
+
+        /* float 已經讓 li 區塊化 */
+        .menu .menu-item {
+            text-align: center;
+            color: white;
+            background: black;
+            float: left;
+            width: 16%;
+            padding: 2% 1%;
+            margin: 0% 1%;
+
+        }
+
+        .menu .menu-item:hover {
+            background: blue;
+            color: yellow;
+            /* 滑過去時會變成手指 */
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>float</h2>
+        <p>特性一：浮動元素會從正常流向(normal flow)獨立出來</p>
+        <p> normal float 由左至右、由上而下的排版方式(地面的人)</p>
+        <p>特性二:使用 float 會自動轉型成 block，所以 block 屬性都可以使用。</p>
+        <img class="float-left" src="https://picsum.photos/200/200/?random=10">
+        <span class="float-right">LOGO</span>
+        <p class="content">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti eum vero odio, ex nam voluptatem fugit
+            iste quaerat molestias, quam eveniet reprehenderit distinctio et impedit sequi exercitationem. Nihil vel ut
+            aliquid animi numquam. Esse maxime saepe numquam enim inventore animi ipsam exercitationem placeat
+            consectetur, quas voluptas eum ipsum voluptatem mollitia a quia. Cupiditate, sequi est quisquam amet quam
+            consequuntur ratione possimus ea consequatur nihil? Excepturi odio quas incidunt repudiandae laudantium,
+            aliquid voluptate possimus minus delectus sunt consequatur hic rem fugiat architecto, veniam quae dolorum,
+            esse distinctio? Iure enim aperiam nesciunt harum! Hic assumenda eaque, dolorem quis porro quia? Esse, ex.
+        </p>
+    </div>
+
+    <div class="container">
+        <h2>清除浮動</h2>
+        <img class="float-left" src="https://picsum.photos/200/200/?random=10">
+        <span class="float-right">LOGO</span>
+        <p class="content">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti eum vero odio, ex nam voluptatem fugit
+            iste quaerat molestias, quam eveniet reprehenderit distinctio et impedit sequi exercitationem. Nihil vel ut
+            aliquid animi numquam. Esse maxime saepe numquam enim inventore animi ipsam exercitationem placeat
+            consectetur, quas voluptas eum ipsum voluptatem mollitia a quia. Cupiditate, sequi est quisquam amet quam
+            consequuntur ratione possimus ea consequatur nihil? Excepturi odio quas incidunt repudiandae laudantium,
+            aliquid voluptate possimus minus delectus sunt consequatur hic rem fugiat architecto, veniam quae dolorum,
+            esse distinctio? Iure enim aperiam nesciunt harum! Hic assumenda eaque, dolorem quis porro quia? Esse, ex.
+        </p>
+        <p class="content" style="clear: both;">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti eum vero odio, ex nam voluptatem fugit
+            iste quaerat molestias, quam eveniet reprehenderit distinctio et impedit sequi exercitationem. Nihil vel ut
+            aliquid animi numquam. Esse maxime saepe numquam enim inventore animi ipsam exercitationem placeat
+            consectetur, quas voluptas eum ipsum voluptatem mollitia a quia. Cupiditate, sequi est quisquam amet quam
+            consequuntur ratione possimus ea consequatur nihil? Excepturi odio quas incidunt repudiandae laudantium,
+            aliquid voluptate possimus minus delectus sunt consequatur hic rem fugiat architecto, veniam quae dolorum,
+            esse distinctio? Iure enim aperiam nesciunt harum! Hic assumenda eaque, dolorem quis porro quia? Esse, ex.
+        </p>
+    </div>
+
+    <div class="container">
+        <h2>float 製作選單</h2>
+        <ul class="menu">
+            <li class="menu-item">item1</li>
+            <li class="menu-item">item2</li>
+            <li class="menu-item">item3</li>
+            <li class="menu-item">item4</li>
+            <li class="menu-item">item5</li>
+        </ul>
+    </div>
+</body>
+
+</html>

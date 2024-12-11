@@ -1,0 +1,62 @@
+<!-- !+enter 產生html5的結構 -->
+<!-- !DOCTYPE 宣告html的版本，只有他是大寫 -->
+<!DOCTYPE html>
+<!-- lang 語系 -->
+<html lang="en">
+
+<head>
+    <!-- <標籤 屬性="值"> 標記內容 </標籤> -->
+    <!-- UTF-8 字元編碼，確保網頁瀏覽時正常，例如若沒有這行，我們使用繁體中文，他國人士的裝置瀏覽時會亂碼 -->
+    <meta charset="UTF-8">
+    <!-- RWD 響應式網頁必須要這行，各裝置瀏覽比例才會正常 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 連結外部 css 檔案 -->
+    <link rel="stylesheet" href="./css/example.css">
+    <!-- 本文件使用的css -->
+    <style>
+        body {
+            background: gray;
+        }
+
+        h1 {
+            color: rgb(0, 255, 255);
+        }
+
+        h2 {
+            color: rgb(237, 26, 26);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML、CSS、JavaScript三者的關系</h1>
+
+    <h2>HTML =>結構、內容</h2>
+    蓋房子:鋼筋水泥建材<br>
+    人:骨架<br>
+
+    <h2>CSS =>樣式、外觀</h2>
+    蓋房子:室內設計裝潢<br>
+    人:皮膚、衣服、配件<br>
+
+    <h2>JavaScript =>互動、行為</h2>
+    蓋房子:提供能源讓房子運作<br>
+    人:行為、動作<br>
+
+
+    <h1>JavaScript</h1>
+    <button id="btn">按鈕</button>
+
+    <!-- 連結外部的 js 檔案 -->
+    <script src="./js/example.js"></script>
+    <!-- 本文件的 js 程式碼 -->
+    <script>
+        const btn = document.querySelector('#btn')
+        btn.onclick = function () {
+            alert('hello world')
+        }
+    </script>
+</body>
+
+</html>

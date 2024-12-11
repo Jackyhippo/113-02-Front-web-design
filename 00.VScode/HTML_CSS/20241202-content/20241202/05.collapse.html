@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 1.使用 bootstrap 的 css -->
+  <link rel="stylesheet" href="./css/bootstrap5.3.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#jacky">
+      Link with href
+    </a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#jacky">
+      Button with data-bs-target
+    </button>
+  </p>
+  <div id="jacky" class="collapse">
+    <div class="card card-body">
+      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user
+      activates the relevant trigger.
+    </div>
+  </div>
+
+  <hr>
+
+  <p>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#jacky02">
+      Toggle width collapse
+    </button>
+  </p>
+  <div style="min-height: 120px;">
+    <div id="jacky02" class="collapse collapse-horizontal">
+      <div class="card card-body" style="width: 300px;">
+        This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+      </div>
+    </div>
+  </div>
+  <!-- 2.使用 bootstrap 的 js，可以讓我們使用元件進行互動 -->
+  <script src="./js/bootstrap.bundle5.3.js"></script>
+</body>
+
+</html>

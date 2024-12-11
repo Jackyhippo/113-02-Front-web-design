@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 使用 display 設計一個 960px 三欄且水平置中的版型 */
+        /* width、margin、padding 自訂 */
+        .container {
+            width: 960px;
+            background: skyblue;
+            margin: auto;
+            /* BFC */
+            /* overflow: hidden; */
+        }
+
+        .col {
+            float: left;
+            /* content 內容區放置文字或圖片的地方 */
+            width: 270px;
+            padding: 10px;
+            margin: 10px;
+            border: 5px solid rgb(140, 140, 254);
+        }
+
+        img {
+            width: 100%;
+            /* max-width: 100%; */
+        }
+
+        /* 用偽元素 after 來清除浮動 */
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col">
+            <img src="https://picsum.photos/300/300/?random=10">
+            <h2>title</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia ut veritatis odit. Numquam cum perferendis
+                velit, quod atque ad iure voluptatem sed perspiciatis animi doloremque inventore, nulla dignissimos
+                ducimus corrupti!</p>
+        </div>
+        <div class="col">
+            <img src="https://picsum.photos/300/300/?random=10">
+            <h2>title</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia ut veritatis odit. Numquam cum perferendis
+                velit, quod atque ad iure voluptatem sed perspiciatis animi doloremque inventore, nulla dignissimos
+                ducimus corrupti!</p>
+        </div>
+        <div class="col">
+            <img src="https://picsum.photos/300/300/?random=10">
+            <h2>title</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia ut veritatis odit. Numquam cum perferendis
+                velit, quod atque ad iure voluptatem sed perspiciatis animi doloremque inventore, nulla dignissimos
+                ducimus corrupti!</p>
+        </div>
+        <div class="col">
+            <img src="https://picsum.photos/300/300/?random=10">
+            <h2>title</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia ut veritatis odit. Numquam cum perferendis
+                velit, quod atque ad iure voluptatem sed perspiciatis animi doloremque inventore, nulla dignissimos
+                ducimus corrupti!</p>
+        </div>
+        <div class="col">
+            <img src="https://picsum.photos/300/300/?random=10">
+            <h2>title</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia ut veritatis odit. Numquam cum perferendis
+                velit, quod atque ad iure voluptatem sed perspiciatis animi doloremque inventore, nulla dignissimos
+                ducimus corrupti!</p>
+        </div>
+        <div class="col">
+            <img src="https://picsum.photos/300/300/?random=10">
+            <h2>title</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia ut veritatis odit. Numquam cum perferendis
+                velit, quod atque ad iure voluptatem sed perspiciatis animi doloremque inventore, nulla dignissimos
+                ducimus corrupti!</p>
+        </div>
+        <!-- 清除浮動叫回高度(背景)，這樣用空標籤寫不是很優雅 -->
+        <!-- <div style="clear: both;"></div> -->
+    </div>
+</body>
+
+</html>

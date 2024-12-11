@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .hover {
+      /* 初始狀態(起始樣式) */
+      width: 100px;
+      height: 100px;
+      color: white;
+      line-height: 100px;
+      font-size: 2rem;
+      background: #000;
+      position: relative;
+      text-align: center;
+      /* 單一屬性 */
+      /* 追蹤轉場屬性(有些屬性無法追蹤 ) */
+      /* transition-property: width, color, background, transform; */
+      /* 一次追蹤可以轉場的屬性 */
+      transition-property: all;
+      /* 轉場持續時間 */
+      transition-duration: 2s;
+      /* 轉場速率
+      ease
+      linear
+      ease-in
+      ease-out
+      ease-in-out
+      cubic-bazier(n,n,n,n) 允許自訂速率
+      更多轉場速率: https://easings.net/zh-tw
+      */
+      transition-timing-function: cubic-bezier(0.36, 0, 0.66, -0.56);
+      /* 延遲時間 預設 0 */
+      transition-delay: 1s;
+      /* 對各別屬性定義 transition 的各種屬性 */
+      transition:
+        width 0.5s 3s cubic-bezier(0.36, 0, 0.66, -0.56),
+        background 3s ease-in-out,
+        color 10s linear,
+        font-size 1s;
+    }
+
+    .hover:hover {
+      /* 結束樣式 */
+      width: 50vw;
+      color: rgb(196, 228, 53);
+      background: rgb(7, 155, 155);
+      font-size: 100px;
+      /* transform: skew(360deg); */
+    }
+
+    .hover span {
+      /* 初始樣式 */
+      position: absolute;
+      /* 定位一定要設定 left、top、right、bottom */
+      left: 0;
+      top: 0;
+      transition: 1s;
+      /* width: 500px;
+      height: 400px;
+      background: green; */
+
+    }
+
+    .hover:hover span {
+      /* 結束樣式 */
+      left: 50%;
+      top: 50%;
+      margin-left: 1000px;
+      transform: translate(-50%, -50%);
+    }
+
+    label {
+      background: darkblue;
+      color: yellow;
+      padding: 0.5rem;
+      border: 2px solid #000;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 0.5rem;
+    }
+
+    .sidebar {
+      width: 100px;
+      color: white;
+      background: #aaa;
+      padding: 1rem;
+      margin-left: -200px;
+      transition: 0.5s;
+    }
+
+    #checked-me {
+      /* 讓 checkbox消失*/
+      display: none;
+    }
+
+    #checked-me:checked+.sidebar {
+      margin-left: 0;
+    }
+
+    nav {
+      transition: 1s;
+    }
+
+    nav:focus {
+      transform: translateX(1000px);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>轉場(transition)或稱為過渡</h1>
+  <ul>
+    <li>轉場是兩組樣式之間漸進式的轉換過程，起始樣式、結束樣式，瀏覽器會將這兩組樣式形成捕間動畫(Tween)。</li>
+    <li>必須要有狀態觸發動作(狀態有很多種)，最常見 :hover，或是 media query (rwd) 媒體查詢尺寸也可以造成轉場。</li>
+    <li></li>
+  </ul>
+  <h1>hover 狀態</h1>
+  <div class="hover">
+    <span>hover</span>
+  </div>
+
+  <hr>
+
+  <h1>checked 狀態</h1>
+  <label for="checked-me">按我!!</label>
+  <input type="checkbox" id="checked-me">
+  <div class="sidebar">
+    微微不好意思存儲他是戰鬥只要心中浙江能量，成熟生存病毒原來男生引導畢竟關係肯定一是要有和平島就不誠信，代表什麼是，下一頁幹部中心夏天溝通交通也能不行還能交易輕輕地點，國務院如下一些一陣出發哥哥市委筆。
+  </div>
+
+  <hr>
+
+  <h1 tabindex="1">focus 狀態</h1>
+  <p tabindex="2">:focus 狀態改變，transition 產生</p>
+  <nav tabindex="3">focus me</nav>
+</body>
+
+</html>

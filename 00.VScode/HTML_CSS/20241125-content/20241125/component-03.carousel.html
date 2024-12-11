@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 1.使用 bootstrap 的 css -->
+  <link rel="stylesheet" href="./css/bootstrap5.3.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <!--
+      data-bs-ride="carousel" 啟動輪播功能
+      data-bs-interval = "5000" 設定輪播圖間隔時間，單位為毫秒
+      carousel-fade 讓輪播的切換效果變成淡入淡出
+      carousel-dark 深色模式，讓文字變成黑色
+  -->
+  <!-- id 與指示器、上一張、下一張按鈕有關，要一起改 -->
+  <div id="jacky" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel" data-bs-interval="1000">
+    <!-- 指示器 -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#jacky" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#jacky" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#jacky" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#jacky" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#jacky" data-bs-slide-to="4"></button>
+    </div>
+    <!-- 輪播圖內容 一個 .carousel-inner 為一個輪播單位，第一個開始的要設定.active -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://picsum.photos/1920/600/?random=10" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://picsum.photos/1920/600/?random=20" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://picsum.photos/1920/600/?random=30" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://picsum.photos/1920/600/?random=40" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://picsum.photos/1920/600/?random=50" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <!-- 上一張按鈕 -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#jacky" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <!-- 下一張按鈕 -->
+    <button class="carousel-control-next" type="button" data-bs-target="#jacky" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- 2.使用 bootstrap 的 js，可以讓我們使用元件進行互動 -->
+  <script src="./js/bootstrap.bundle5.3.js"></script>
+</body>
+
+</html>

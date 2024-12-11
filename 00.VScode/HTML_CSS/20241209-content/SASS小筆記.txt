@@ -1,0 +1,4 @@
+SASS筆記
+
+在一般HTML的環境下，使用 SASS 需安裝 Live Sass Compiler
+然後再去 settings.json 修改設定(老師給的設定檔)

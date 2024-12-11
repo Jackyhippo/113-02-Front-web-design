@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 1.使用 bootstrap 的 css -->
+  <link rel="stylesheet" href="./css/bootstrap5.3.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .bg1 {
+      background: url('https://picsum.photos/1920/1080/?random=1')no-repeat center/cover fixed;
+      height: 300px;
+    }
+
+    .bg2 {
+      background: url('https://picsum.photos/1920/1080/?random=2')no-repeat center/cover fixed;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 三個不同背景顏色的滿版區塊，每個區塊裡面的 h1 要水平垂直置中 -->
+  <section class="vh-100 bg-info d-flex justify-content-center align-items-center">
+    <h1>SECTION1</h1>
+  </section>
+  <div class="bg1 d-flex justify-content-center align-items-center text-white">
+    <h1>最新消息</h1>
+  </div>
+  <section class="vh-100 bg-primary d-flex justify-content-center align-items-center">
+    <h1>SECTION2</h1>
+  </section>
+  <div class="bg2 d-flex justify-content-center align-items-center text-white">
+    <h1>關於我們</h1>
+  </div>
+  <section class="vh-100 bg-danger d-flex justify-content-center align-items-center">
+    <h1>SECTION3</h1>
+  </section>
+  <!-- 2.使用 bootstrap 的 js，可以讓我們使用元件進行互動 -->
+  <script src="./js/bootstrap.bundle5.3.js"></script>
+</body>
+
+</html>

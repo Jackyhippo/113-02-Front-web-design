@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* body {
+      background: url('../images/0402.jpg');
+    } */
+
+    table {
+      margin: auto;
+      text-align: center;
+      border-collapse: collapse;
+      background: #ff9;
+    }
+
+    tr:nth-child(odd) {
+      height: 100px;
+    }
+
+    tr:nth-child(even) {
+      height: 150px;
+    }
+
+    td {
+      width: 400px;
+      border: 1px solid #000;
+    }
+
+    img {
+      height: 150px;
+    }
+
+    P {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <form action="">
+      <table>
+        <tr>
+          <td>真皮皮包</td>
+          <td>真皮短夾</td>
+        </tr>
+        <tr>
+          <td><img src="../images/0403.jpg" alt=""></td>
+          <td><img src="../images/0404.jpg" alt=""></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio" name="r1" value="購買" checked>購買
+            <input type="radio" name="r1" value="不購買">不購買
+            <input type="radio" name="r1" value="考慮中">考慮中
+          </td>
+          <td>
+            <input type="radio" name="r2" value="購買">購買
+            <input type="radio" name="r2" value="不購買">不購買
+            <input type="radio" name="r2" value="考慮中" checked>考慮中
+          </td>
+        </tr>
+      </table>
+      <P>
+        <input type="submit" value="送出" onclick="showMsg(form.r1.value, form.r2.value)">
+        <input type="reset" value="重製">
+      </P>
+    </form>
+  </div>
+
+  <script>
+    function showMsg(r1, r2) {
+      alert(`
+      流行皮件購買確認：
+      ●真皮皮包：${r1}
+      ●真皮短夾：${r2}
+      `)
+    }
+  </script>
+</body>
+
+</html>
