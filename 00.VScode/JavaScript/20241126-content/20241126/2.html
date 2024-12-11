@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text-red {
+      color: red;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 綁定標籤屬性 -->
+    <img v-bind:src="image" height="50" alt="">
+    <!-- 簡寫 -->
+    <img :src="image" height="50" alt="">
+    <a :href="link.url">{{link.text}}</a>
+    <!-- 綁定 style -->
+    <p :style="textStyle">依靠增長至今科技自身近日又是競爭力嚴格達到一年，原料五金手。</p>
+    <p :style="{color:textColor,textAlign}">看來結構，所以有可能，機械大小，力量強。</p>
+    <p :class="textClassObject">看來結構，所以有可能，機械大小，力量強。</p>
+    <p :class="textClassArray">看來結構，所以有可能，機械大小，力量強。</p>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          image: 'https://github.com/vuejs.png',
+          link: {
+            url: 'https://x.com',
+            text: 'Twitter'
+          },
+          textStyle: {
+            color: 'lightblue',
+            textAlign: 'center',
+            'background-color': 'gray'
+          },
+          textColor: 'pink',
+          textAlign: 'right',
+          textClassObject: {
+            'text-red': true,
+            'text-center': false
+          },
+          textClassArray: ['text-center']
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>

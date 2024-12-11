@@ -1,0 +1,3 @@
+忽略掉敏感資訊檔
+.env
+node_modules

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = [1, 8, 3, 4, 5, 6, 7, 2, 9, 10]
+        let total = 0
+        for (let i = 0; i < data.length; i++) {
+            const money = (i + 1) * data[i]
+            total += money
+        }
+        document.write(total)
+
+        document.write('<hr>')
+
+        const numbers = [1, 8, 3, 4, 5, 6, 7, 2, 9, 10]
+        for (const i in numbers) {
+            document.write(`i ${i} * ${numbers[i]} = ${i * numbers[i]} <br>`)
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form id="form">
+    <input type="text" name="aaa" id="input-text">
+    <input type="submit" value="新增">
+  </form>
+  <ul id="list"></ul>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+    crossorigin='anonymous'></script>
+  <script>
+    $('form').submit(function (event) {
+      const value = $('#input-text').val()
+
+      if (value.length > 0) {
+        $('#list').append(`<li>${value}<input type="button" value="X" class="btn-del"></li>`)
+        $('#input-text').val('')
+      }
+      // jQ 事件的 return false
+      // preventDefault + stopPropagation
+      return false
+    })
+
+    $('#list').click(function (event) {
+      console.log(event)
+      // 這樣寫會刪除滑鼠所點到的目標刪除，若要指定特定目標，還需要增加判斷世來幫忙
+      const bbb = $(event.target)
+      // 這樣寫會指向所有的 .btn-del ，會全部刪除
+      // const bbb = $('.btn-del')
+      bbb.parent().remove()
+    })
+
+    // $('#list').on('click', '.btn-del', function () {
+    //   $(this).parent().remove()
+    // })
+  </script>
+</body>
+
+</html>

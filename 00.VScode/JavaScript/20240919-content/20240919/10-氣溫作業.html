@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = [
+            [18.2, 17.3, 15.0, 13.4],
+            [23.8, 25.1, 20.6, 17.8],
+            [20.6, 21.5, 18.4, 15.7]
+        ]
+        let total = 0
+        // *每日的平均溫度*
+        for (let i = 0; i < data.length; i++) {
+            total += data[i][0]
+            console.log(total / 3)
+        }
+        //for (let i = 0; i < data[1].length; i++) {
+        //    total += data[i][1]
+        //    console.log(total / 3)
+        //}
+        //for (let i = 0; i < data[2].length; i++) {
+        //    total += data[i][2]
+        //    console.log(total / 3)
+        //}
+        //for (let i = 0; i < data[3].length; i++) {
+        //    total += data[i][3]
+        //    console.log(total / 3)
+        //}
+
+        // *時段一、時段二、時段三的平均氣溫*
+        for (let i = 0; i < data.length; i++) {
+            total += data[0][i]
+            console.log(total / 4)
+        }
+        //for (let i = 0; i < data.length; i++) {
+        //    total += data[0][i]
+        //    console.log(total / 4)
+        //}
+        //for (let i = 0; i < data.length; i++) {
+        //    total += data[0][i]
+        //    console.log(total / 4)
+        //}
+    </script>
+</body>
+
+</html>

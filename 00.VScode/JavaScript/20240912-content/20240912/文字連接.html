@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = 100
+        let b = '10'
+        let c = 'a'
+        console.log(a + b)  // 10010
+        console.log(a - b)  // 90
+        console.log(a - c)  // NaN
+
+        // prompt(文字)
+        // 出現顯示文字的輸入框，跳出來時網頁暫停狀態
+        // 會收到輸入的文字，如果使用者案取消則是收到null
+        const lastName = prompt('請輸入姓')
+        const firstName = prompt('請輸入名')
+        const fullName = lastName + firstName
+        console.log(fullName)
+        document.write('<h1>' + fullName + '</h1>')
+        document.write(`<h1>${fullName}</h1>`)
+
+
+    </script>
+</body>
+
+</html>

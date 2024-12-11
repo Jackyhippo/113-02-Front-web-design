@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // && --> and
+        const rain = false, wind = true
+        if (!rain && !wind)
+            console.log('出門')
+        else
+            console.log('在家')
+
+        // || --> or
+        const dinner = '炸雞'
+        if (dinner === '炸雞' || dinner === '披薩') {
+            console.log('好耶')
+        } else {
+            console.log('不好耶')
+        }
+        const din = '披薩'
+        if (din === '炸雞' || din === '披薩') {
+            console.log('好耶')
+        } else {
+            console.log('不好耶')
+        }
+
+        const code = confirm('你會寫 code 嗎')
+        const game = confirm('你會玩原神嗎')
+        const player = confirm('你是可莉玩家嗎')
+        if ((game && player) || code) {
+            console.log('酷ㄟ')
+        } else {
+            console.log('好遜wwwww')
+        }
+
+    </script>
+</body>
+
+</html>

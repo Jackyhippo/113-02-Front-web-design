@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    #box {
+      margin: auto;
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box"></div>
+  <br>
+  紅色<input type="range" min="0" max="255" value="0" step="1" class="rgb">
+  <span class="rgbvalue">000</span>
+  <input type="button" value="隨機" class="btn"><br>
+
+  綠色<input type="range" min="0" max="255" value="0" step="1" class="rgb">
+  <span class="rgbvalue">000</span>
+  <input type="button" value="隨機" class="btn"><br>
+
+  藍色<input type="range" min="0" max="255" value="0" step="1" class="rgb">
+  <span class="rgbvalue">000</span>
+  <input type="button" value="隨機" class="btn"><br>
+
+
+  <script>
+    const rgb = document.getElementsByClassName('rgb')
+    const rgbvalue = document.getElementsByClassName('rgbvalue')
+    const btn = document.getElementsByClassName('btn')
+    const box = document.getElementById('box')
+
+
+    for (let i = 0; i < 3; i++) {
+      rgb[i].addEventListener('input', () => {
+        rgbvalue[i].innerText = rgb[i].value.padStart(3, '0')
+        box.style.background = `rgb(${rgb[0].value}, ${rgb[1].value}, ${rgb[2].value})`
+      })
+      btn[i].addEventListener('click', () => {
+        rgb[i].value = Math.round(Math.random() * 255)
+        rgbvalue[i]
+      })
+    }
+
+
+    // red.addEventListener('input', () => {
+    //   console.log('range red')
+    //   redvalue.innerText = red.value
+    // })
+    // red.addEventListener('change', () => {
+    //   console.log('range red')
+    // })
+    //Math.round(Math.random() * 254)
+  </script>
+</body>
+
+</html>

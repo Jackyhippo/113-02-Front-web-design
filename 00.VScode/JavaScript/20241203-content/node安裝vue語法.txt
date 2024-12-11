@@ -1,0 +1,25 @@
+npm i -g pug-cli =>安裝pug
+
+pug 1.pug -w -P (-o aaa.html) =>把 pug 轉譯出去 
+pug  檔名 不會排版 有排版 輸出新的檔名名 
+
+
+npm i -g sass
+
+sass 1.scss 1.css -w
+sass 原始檔  新檔  變更連結
+
+
+npm create vue@latest =>安裝vue(版本)
+
+npm create vuetify@latest =>安裝vuetify(版本)
+
+npm i -D sass
+
+npm run build =>打包檔案
+
+npm run preview =>預覽
+
+npm un vite-plugin-vue-layouts =>解除安裝layouts
+
+npm add -D vite-plugin-vue-devtools =>安裝viteplugin

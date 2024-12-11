@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="btns">
+    <input type="text" id="textbox">
+    <input type="button" value="新增" class="btn">
+    <ul id="aaa"></ul>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+    crossorigin='anonymous'></script>
+  <script>
+    // function add() {
+    //   const newBtn = $('<ul><li><input type="button" value="X" class="btns"></li><ul>')
+    //   newBtn.insertAfter($(this))
+    // }
+    // $('#btns').click(add)
+
+    $('#btns').on('click', '.btn', function () {
+      const bbb = $('#textbox').val()
+      $(`<ul><li>${bbb}<input type="button" value="X" class="btndelete"></li></ul>`).insertAfter($('#aaa'))
+    })
+
+
+    // $('#textbox').on('input', function setText() {
+    //   $('text').text($(this).val())
+    // })
+  </script>
+</body>
+
+</html>

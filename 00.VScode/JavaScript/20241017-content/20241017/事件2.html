@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="btn1" id="btn1">
+  <input type="button" value="unbind" id="unbind">
+  <hr>
+  <input type="button" value="my-btn" class="my-btn">
+  <input type="button" value="my-btn" class="my-btn">
+  <input type="button" value="my-btn" class="my-btn">
+  <script>
+    const btn1 = document.getElementById('btn1')
+
+    // btn1.onclick = function () {}
+
+    // const abc = () => {}
+    // btn1.onclick = abc
+
+    btn1.onclick = () => {
+      btn1.value = 'ABCD'
+      alert('ABCD')
+    }
+
+    const unbind = document.getElementById('unbind')
+    unbind.onclick = () => {
+      // btn1.onclick = null
+      btn1.onclick = () => [
+        btn1.value = 'EFGH'
+      ]
+    }
+
+    // .getElementsByClassName、.querySelectorAll 有複數(陣列)的前提下，就要使用迴圈讓每個值都有事件
+    const myBtn = document.getElementsByClassName('my-btn')
+    for (const element of myBtn) {
+      element.onclick = () => {
+        alert('1234')
+      }
+    }
+    // 無效，陣列必須一個一個加上事件，不能一次加
+    myBtn.onclick = () => {
+      alert('1234')
+    }
+  </script>
+</body>
+
+</html>

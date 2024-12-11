@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #loading {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      transition: opacity 3s;
+      background: grey;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading">
+    <p>載入中</p>
+    <p id="progress">0%</p>
+  </div>
+  <div id="content">
+    <input type="button" value="AAAA">
+    <img src="https://picsum.photos/1000/1000/?random=10">
+    <img src="https://picsum.photos/1000/1000/?random=15">
+    <img src="https://picsum.photos/1000/1000/?random=20">
+    <img src="https://picsum.photos/1000/1000/?random=25">
+    <img src="https://picsum.photos/1000/1000/?random=30">
+  </div>
+  <script>
+    const image = document.getElementsByTagName('img')
+    const progress = document.getElementById('progress')
+    const loading = document.getElementById('loading')
+
+    let loaded = 0
+    for (const element of image) {
+      element.onload = () => {
+        loaded++
+        progress.innerText = Math.round(loaded / image.length * 100) + '%'
+        if (loaded === image.length) {
+          document.body.style.overflow = 'auto'
+          loading.style.opacity = 0
+          setTimeout(() => {
+            loading.style.display = 'none'
+          }, 3000)
+        }
+      }
+    }
+    // 第一種 (常用)
+    window.onload = () => {
+      console.log('window onload')
+    }
+
+    // 第二種
+    document.onreadystatechange = () => {
+      console.log(document.readyState)
+    }
+  </script>
+</body>
+
+</html>

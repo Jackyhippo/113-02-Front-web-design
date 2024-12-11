@@ -1,0 +1,5 @@
+local Storage
+本地儲存空間
+
+session Storage
+工作空間儲存空間

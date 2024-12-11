@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // .shift() 刪除陣列第一個並回傳
+    // .push() 新增到陣列後方
+    const arr = [1, 2, 3]
+    for (const item of arr) {
+      arr.shift()
+      arr.push(item)
+    }
+    console.log(arr)  // [1, 3, 3]
+  </script>
+</body>
+
+</html>

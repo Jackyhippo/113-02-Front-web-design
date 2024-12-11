@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 陣列包物件(常用)
+        const vtubers = [
+            { name: 'aqua', sub: 228 },
+            { name: 'himehina', sub: 95.1 },
+            { name: 'kaf', sub: 100 },
+        ]
+        console.log(vtubers)
+        console.table(vtubers)
+
+        document.write('<ul>')
+        for (let i = 0; i < vtubers.length; i++) {
+            // 陣列用[]，物件用.
+            document.write(`<li>第 ${i + 1} 個VTuber 是 ${vtubers[i].name}，訂閱數 ${vtubers[i].sub} 萬</li>`)
+        }
+        document.write('</ul>')
+
+        // 物件包陣列
+        const store = {
+            name: 'PChome',
+            url: 'https://24h.pchome.com.tw/',
+            products: [
+                { name: 'iPhone 16 pro Max (1TB)', price: 58900 },
+                { name: 'NOTHING phone 2 12/256', price: 18900 }
+            ]
+        }
+        document.write('<table border="1">')
+        // caption 表格標題
+        document.write('<caption>')
+        document.write(`<a href="${store.url}">${store.name}</a>`)
+        document.write('</caption>')
+        for (let i = 0; i < store.products.length; i++) {
+            document.write('<tr>')
+            document.write(`<td>${store.products[i].name}</td>`)
+            document.write(`<td>${store.products[i].price}</td>`)
+            document.write('</tr>')
+        }
+        document.write('</table">')
+    </script>
+</body>
+
+</html>

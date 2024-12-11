@@ -1,0 +1,40 @@
+終端機指令
+
+F1>終端機選取預設設定檔>cmd
+(或是叫出終端機打cmd有同樣效果)
+
+ctrl + ~ =>(叫出終端機)
+
+ctrl + c =>(停用正在執行的終端機，複製可用上下鍵複製)
+
+cd =>(導入資料夾名稱)
+
+cd ../ =>(跳出資料夾名稱)
+
+node -v  =>(顯示當下node.js版本)
+
+npm init  =>(建立package.json專案)
+
+npm init --yes =>(快速建立package.json專案)
+
+node index.js =>(執行index(檔名).js的結果)
+
+
+使用 export default 匯出 =>【一個檔案只能使用一個(要選取多需使用{}包起來)】
+
+npm i (linebot) (dotenv) (axios) =>【用空白來區分不同套件(可同時安裝)】
+
+npm i (套件名稱)=>(安裝套件指令install可簡寫 i )
+(P.S node_modules(套件資料夾)也可以用這個指令叫回來，前提是以安裝過的套件)
+
+npm init @eslint/config@latest -- --eslintrc --config eslint-config-standard =>(安裝eslint，選取npm)
+
+npm i -D nodemon =>(安裝nodemon(偵測到變更後自動重開), -D是只在目前專案內用，不會同步到雲端，-g是全域安裝)
+
+npm run dev =>執行dotenv(機器人)
+
+node tests/fe.js =>抓資料夾內的fe.js檔案
+
+npm i cheerio =>cheerio套件
+
+npx nodemon tests/fe.js =>npx指定一個套件去執行測試

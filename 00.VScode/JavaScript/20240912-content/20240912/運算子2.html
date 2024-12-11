@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = 10
+        // 遞增語法
+        a++
+        console.log(a)
+        ++a
+        console.log(a)
+        a--
+        console.log(a)
+        --a
+        console.log(a)
+
+        let x = 0, y = 10
+        // x = y  (10,10)
+        // y++    (10,11)
+        x = y++
+        console.log(x, y) // 11
+
+        let v = 0, w = 10
+        // ++w   (0,11)
+        // v = w (11,11)
+        v = ++w
+        v = w += 2
+        console.log(v, w) // 11
+        // 先看 = 後面是什麼來決定執行順序
+
+    </script>
+</body>
+
+</html>

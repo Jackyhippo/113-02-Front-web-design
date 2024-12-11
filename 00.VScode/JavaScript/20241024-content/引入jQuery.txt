@@ -1,0 +1,5 @@
+引入 "jQuery"
+
+F1 > cdnjs:Search for libraries > jquery(js lib for dom oper)
+
+> 3.7.1 > jquery.min.js > lnsert into document

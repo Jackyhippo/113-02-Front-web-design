@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = 5
+        // 20 單純 a + 10 ，不會修改到 a
+        a + 10
+        console.log('a', a)
+        // 把 a 修改為 a + 10
+        a = a + 10
+        console.log('a', a)
+        // a = a + 10 ---> a += 10 (簡寫)
+        a += 10
+        console.log('a', a)
+
+        let b = 5
+        b -= 2
+        console.log('b', b) //  3
+
+        let c = 9
+        c *= 3
+        console.log('c', c) //  27
+
+        let d = 81
+        d /= 9
+        console.log('d', d)
+
+        let e = 88469
+        e %= 17
+        console.log('e', e)
+
+    </script>
+</body>
+
+</html>

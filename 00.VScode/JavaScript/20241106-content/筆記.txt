@@ -1,0 +1,26 @@
+GET: 讀取資源
+會把資料放在網址上
+
+
+POST: 新增資源
+會把資料放在看不到的地方上
+
+
+RESTful API
+是一種風格的規範
+
+基於安全性問題，大多數的伺服器都有設置跨網域防護 (CORS)=>擋的是瀏覽器
+
+
+Postman 測試 HTTP 請求
+
+jsonplaceholder(提供假資料的網站)
+
+
+1.axios (官方)也支援 Node.js
+
+2.Fetch API (原生)
+
+3.jQuery AJAX (好寫)
+
+4.XMLHttpRequest (難寫)

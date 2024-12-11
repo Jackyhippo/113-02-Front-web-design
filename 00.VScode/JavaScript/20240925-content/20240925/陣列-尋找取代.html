@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const numbers1 = [100, 200, 300, 100]
+
+    // .includes()
+    console.log(numbers1.includes(200))        // true
+    // .indexOf()
+    console.log(numbers1.indexOf(100, 2))      // 3
+    // .lastIndexOf()
+    console.log(numbers1.lastIndexOf(100, 2))  // 0
+
+    const arr = [{ a: 1 }]
+    console.log(arr.includes({ a: 1 }))        // false
+
+    const obj = { b: 2 }
+    const arr2 = [obj]
+    console.log(arr2.includes(obj))            // true
+
+    // ================================================================================
+    // 常用 .filter、findIndex
+
+    const numbers2 = [100, 200, 300, 400, 500]
+
+    // .some(function)
+    // 判斷陣列有沒有東西執行 function 後 return true
+    // 回傳布林值
+    const some = numbers2.some(value => {
+      return value > 300
+    })
+    // const some = numbers2.some(value => value > 300)
+    console.log('some', some)
+
+    // .every(function)
+    // 判斷陣列所有東西執行 function 後 return true
+    // 回傳布林值
+    const every = numbers2.every(value => {
+      return value > 300
+    })
+    console.log('every', every)
+
+    // .find(function)
+    // 找第一個執行後 return true
+    // 回傳值
+    const find = numbers2.find(value => {
+      return value > 300
+    })
+    console.log('find', find)
+
+    // .findLast(function)
+    // 找最後一個執行後 return true
+    // 回傳值
+    const findLast = numbers2.findLast(value => {
+      return value > 300
+    })
+    console.log('findLast', findLast)
+
+    // .findIndex(function)
+    // 找第一個執行後 return true
+    // 回傳索引，找不到是 -1
+    const findIndex = numbers2.findIndex(value => {
+      return value > 300
+    })
+    console.log('findIndex', findIndex)
+
+    // .findLastIndex(function)
+    // 找最後一個執行後 return true
+    // 回傳索引，找不到是 -1
+    const findLastIndex = numbers2.findLastIndex(value => {
+      return value > 300
+    })
+    console.log('findLastIndex', findLastIndex)
+
+    // .filter(function) =>很常用
+    // 將所有 return true 的值產生出新陣列
+    const filter = numbers2.filter(value => {
+      return value > 300
+    })
+    console.log('filter', filter)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #img {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="變小" id="btn1">
+  <input type="button" value="變大" id="btn2">
+  <input type="button" value="移動" id="btn3">
+  <input type="button" value="停止" id="btn4">
+  <input type="button" value="淡入" id="btn5">
+  <input type="button" value="淡出" id="btn6">
+  <input type="button" value="半透明" id="btn7">
+  <input type="button" value="淡入淡出切換" id="btn8">
+  <input type="button" value="滑上" id="btn9">
+  <input type="button" value="滑下" id="btn10">
+  <input type="button" value="滑上滑下切換" id="btn11">
+  <hr>
+  <img src="https://github.com/wdaweb.png" id="img">
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+    integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=='
+    crossorigin='anonymous'></script>
+  <script>
+    // .animate( {樣式: 值} , 動畫長度 , linerar,  動畫結束時執行的 function)
+    // 僅能修改值為數字的 CSS，若需修改顏色，需使用 jQuery UI
+    // 動畫長度預設 400，可以寫 ms 或是 fast(200) slow(600)
+    // linear 不寫就是 ease
+    $('#btn1').click(function () {
+      $('#img').animate({
+        width: '100px',
+        height: '100px'
+      }, function () {
+        console.log('變小了')
+      })
+    })
+
+    $('#btn2').click(function () {
+      $('#img').animate({
+        width: '+=100px',
+        height: '+=100px'
+      }, 'slow', function () {
+        console.log('變大了')
+      })
+    })
+
+    $('#btn3').click(function () {
+      $('#img')
+        .animate({ left: '+=100px' }, 2000, function () {
+          console.log('往右了')
+        })
+        .animate({ top: '+=100px' }, 2000, function () {
+          console.log('往下了')
+        })
+        .animate({ left: '500px' }, 2000, function () {
+          console.log('往下了')
+        })
+    })
+
+    // .stop(是否停止之後的動畫, 是否跳到目前動畫結束的狀態)
+    // 如果第二個參數是 true，第一個就必須要是 true
+    // 預設都是 false
+    // $('#img').stop(true, false)    -->原地停下
+    // $('#img').stop(true, true)     -->跳到目前動畫結束
+    // $('#img').stop()               -->直接撥下一個動畫
+    $('#btn4').click(function () {
+      $('#img').stop(true, false)
+    })
+
+    // .fadeIn(動畫長度, 'linear' , function)
+    $('#btn5').click(function () {
+      $('#img').fadeIn()
+    })
+    // .fadeOut(動畫長度, 'linear' , function)
+    // 淡出後會加上 display: none (會跑版)
+    $('#btn6').click(function () {
+      $('#img').fadeOut()
+    })
+
+    // .fadeTo(動畫長度, 不透明度 , 'linear' , function)
+    // 動畫長度和不透明度必填
+    $('#btn7').click(function () {
+      $('#img')
+        .fadeTo(8000, 0.3)
+        .fadeTo(1000, 1.0)
+    })
+
+    $('#btn8').click(function () {
+      $('#img').fadeToggle()
+    })
+
+    // .slideUp(動畫長度, 'linear' , function)
+    $('#btn9').click(function () {
+      $('#img').slideUp(2000)
+    })
+    // .slideDown(動畫長度, 'linear' , function)
+    $('#btn10').click(function () {
+      $('#img').slideDown(2000)
+    })
+    // .slideToggle(動畫長度, 'linear' , function)
+    $('#btn11').click(function () {
+      $('#img').slideToggle(2000)
+    })
+  </script>
+</body>
+
+</html>

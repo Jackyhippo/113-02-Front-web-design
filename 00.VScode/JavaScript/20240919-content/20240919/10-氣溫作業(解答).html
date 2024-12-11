@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = [
+            [18.2, 17.3, 15.0, 13.4],
+            [23.8, 25.1, 20.6, 17.8],
+            [20.6, 21.5, 18.4, 15.7]
+        ]
+
+        // 第一題
+        document.write('<table border="1">')
+
+        document.write('</table>')
+
+        // 第二題
+        for (let j = 0; j < 4; j++) {
+            let sum = 0
+            for (let i = 0; i < 3; i++) {
+                sum += data[i][j]
+            }
+            sum /= 3
+            document.write(`<p>星期${j + 1}的平均是 ${sum}</p>`)
+        }
+
+        // 第三題
+        for (let i = 0; i < 3; i++) {
+            let sum = 0
+            for (let j = 0; j < 4; j++) {
+                sum += data[i][j]
+            }
+            sum /= 4
+            document.write(`<p>時段${i + 1}的平均是 ${sum}</p>`)
+        }
+
+        // 第四題 + 第五題
+
+    </script>
+</body>
+
+</html>

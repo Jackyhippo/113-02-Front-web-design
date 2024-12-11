@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = { data: 100 }
+        let b = a
+        console.log(a, b)   // 100 100
+        a.data = 1000
+        console.log(a, b)   // 1000 1000
+
+        let c = { data: 100 }
+        let d = c
+        console.log(c, d)   // 100 100
+        c = { data: 1000 }
+        console.log(c, d)   // 1000 100
+
+        const e = { data: 100 }
+        function test(input) {
+            input.data = 1000
+            console.log(input)   //1000
+            console.log(e)       //1000
+        }
+        test(e)
+        console.log(e)           //1000
+
+        const f = { data: 100 }
+        function test2(input) {
+            input = { data: 1000 }
+            console.log(input)  // 1000
+            console.log(f)      // 100
+        }
+        test2(f)
+        console.log(f)          // 100
+
+        let g = 100
+        function test3(input) {
+            input = 1000
+            console.log(input)   //1000
+            console.log(g)       //100
+        }
+        test3(g)
+        console.log(g)           //100
+    </script>
+</body>
+
+</html>
