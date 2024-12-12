@@ -13,7 +13,7 @@ export const useListStore = defineStore('list', {
     // 是否在休息時間
     break: false,
     // 已完成事項
-    finshedItems: [],
+    finishedItems: [],
     // 目前倒數事項
     current: '',
   }),
@@ -48,17 +48,30 @@ export const useListStore = defineStore('list', {
       this.items[i].edit = false
     },
     setCurrentItem() {
-      this.current = this.items.shift().text
+      this.current = this.break ? '休息一下' : this.items.shift().text
     },
     countdown() {
       this.timeleft--
     },
-    setFinshItem() {
-      this.finshedItems.push({
-        id: this.id++,
-        text: this.current,
-      })
+    setFinishItem() {
+      if (!this.break) {
+        this.finishedItems.push({
+          id: this.id++,
+          text: this.current,
+        })
+      }
       this.current = ''
+      if (this.items.length > 0) {
+        this.break = !this.break
+      }
+      this.timeleft = this.break ? timeBreak : time
     },
+    delFinishedItem(id) {
+      const i = this.finishedItems.findIndex((item) => item.id === id)
+      this.finishedItems.splice(i, 1)
+    },
+  },
+  persist: {
+    key: 'pomodoro-list',
   },
 })

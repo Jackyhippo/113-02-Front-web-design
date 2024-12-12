@@ -6,8 +6,8 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     x="0px"
     y="0px"
-    width="200px"
-    height="500px"
+    width="408.165px"
+    height="796.007px"
     viewBox="0 0 408.165 796.007"
     enable-background="new 0 0 408.165 796.007"
     xml:space="preserve"
@@ -86,6 +86,10 @@ defineProps({
 </script>
 
 <style scoped lang="sass">
+.digit
+  width: 100px
+  height: 200px
+  margin: 7px
 path, circle
   // fill => svg的填滿，預設為透明
   fill: transparent

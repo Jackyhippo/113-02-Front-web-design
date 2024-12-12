@@ -13,8 +13,8 @@
           :disabled="status === STATUS.COUNTING || (current.length === 0 && items.length === 0)"
           @click="startTimer"
         ></v-btn>
-        <v-btn icon="mdi-pause" :disabled="status !== STATUS.COUNTING"></v-btn>
-        <v-btn icon="mdi-skip-next" :disabled="current.length === 0"></v-btn>
+        <v-btn icon="mdi-pause" :disabled="status !== STATUS.COUNTING" @click="pauseTimer"></v-btn>
+        <v-btn icon="mdi-skip-next" :disabled="current.length === 0" @click="finishTimer"></v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -35,9 +35,10 @@ const status = ref(STATUS.STOP)
 
 const list = useListStore()
 const { current, items, timeleft } = storeToRefs(list)
-const { setCurrentItem, countdown, setFinshItem } = list
+const { setCurrentItem, countdown, setFinishItem } = list
 
 const settings = useSettingsStore()
+const { selectedFile } = storeToRefs(settings)
 
 const currentText = computed(() => {
   if (current.value.length > 0) {
@@ -59,16 +60,30 @@ const startTimer = () => {
 
   timer = setInterval(() => {
     countdown()
-    if (timeleft.value === 0) {
-      finshTimer()
+    if (timeleft.value < 0) {
+      finishTimer()
     }
   }, 1000)
 }
 
-const finshTimer = () => {
+const finishTimer = () => {
   clearInterval(timer)
   status.value = STATUS.STOP
-  setFinshItem()
+
+  const audio = new Audio()
+  audio.src = selectedFile.value
+  audio.play()
+
+  setFinishItem()
+
+  if (items.value.length > 0) {
+    startTimer()
+  }
+}
+
+const pauseTimer = () => {
+  clearInterval(timer)
+  status.value = STATUS.PAUSE
 }
 
 const currentTime = computed(() => {

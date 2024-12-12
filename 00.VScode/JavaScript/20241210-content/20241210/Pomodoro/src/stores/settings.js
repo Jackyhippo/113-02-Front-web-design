@@ -13,4 +13,14 @@ export const useSettingsStore = defineStore('settings', {
     // 預設選中的鬧鐘 ID
     selected: 1,
   }),
+  getters: {
+    selectedFile() {
+      const i = this.alarms.findIndex((alarm) => alarm.id === this.selected)
+      return this.alarms[i].file
+    },
+  },
+  persist: {
+    key: 'pomodoro-settings',
+    pick: ['selected'],
+  },
 })
