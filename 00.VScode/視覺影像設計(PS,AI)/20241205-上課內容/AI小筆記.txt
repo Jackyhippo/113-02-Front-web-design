@@ -17,3 +17,7 @@ ctrl + shift + G ->解散群組
 "V" -> 選取工具
 
 ctrl + Y ->路徑檢視
+
+ctrl + L ->新增圖層
+
+ctrl + U ->綠色輔助線開關
