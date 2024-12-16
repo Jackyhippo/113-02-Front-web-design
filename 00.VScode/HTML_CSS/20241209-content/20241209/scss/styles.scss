@@ -573,3 +573,95 @@ $breakpoint-xxl: 1400px;
   @include xxl {
   }
 }
+
+/* list(列表) 像 js 的陣列，索引從 1 開始，不是 0 */
+// 可以用逗號、空格去分隔來表示，裡面的每個元素稱作 item
+$width_list: 100px, 200px, 300px;
+$margin_list: 10px 20px 30px 40px;
+$bgColor_list: red, green, blue;
+$zindex_list: 1 2 3 4;
+$border_list: 1px solid red, 1px solid blue, 1px solid green, 1px solid yellow;
+
+/* 用nth(list, index) 取 item 值 */
+.list {
+  width: nth($width_list, 1);
+  width: nth($width_list, 2);
+  width: nth($width_list, 3);
+  border: nth($border_list, 1);
+  border: nth($border_list, 2);
+  border: nth($border_list, 3);
+  border: nth($border_list, 4);
+}
+
+/* 用index(list, value) 取 index 值 */
+.index {
+  width: index($width_list, 100px);
+  width: index($width_list, 200px);
+  width: index($width_list, 300px);
+  z-index: index($bgColor_list, red);
+  z-index: index($bgColor_list, green);
+  z-index: index($bgColor_list, blue);
+}
+
+/* 用length($list) 取 list 值 */
+.length {
+  z-index: length($bgColor_list);
+}
+
+/* 搭配 @for 去做迴圈 */
+/* # {} 插植語法(模板字串)，就像 js 的 ${} 或是 vue {{ }} */
+@for $i from 1 through length($bgColor_list) {
+  .bg-#{nth($bgColor_list, $i)} {
+    background-color: nth($bgColor_list, $i);
+  }
+}
+
+@each $value in $bgColor_list {
+  .each-bg-#{$value} {
+    background-color: $value;
+  }
+}
+
+$list1: 1, 2, 3;
+$list2: 4, 5, 6;
+.join {
+  z-index: join($list1, $list2);
+}
+
+/* map(物件)*/
+/* map 寫完記得加上 ; */
+$map1: (
+  primary: red,
+  secondary: green,
+  warning: blue,
+);
+
+@each $key, $value in $map1 {
+  .bg-#{$key} {
+    background-color: $value;
+  }
+}
+
+$map2: (
+  default: (
+    width: 100px,
+    height: 150px,
+  ),
+  box1: (
+    width: 200px,
+    height: 250px,
+  ),
+  box2: (
+    width: 300px,
+    height: 350px,
+  ),
+);
+
+@each $key, $value in $map2 {
+  $width: map-get($value, width);
+  $height: map-get($value, height);
+  .btn-#{$key} {
+    width: $width;
+    height: $height;
+  }
+}
