@@ -38,3 +38,11 @@ node tests/fe.js =>抓資料夾內的fe.js檔案
 npm i cheerio =>cheerio套件
 
 npx nodemon tests/fe.js =>npx指定一個套件去執行測試
+
+npm i dotenv express mongoose =>dotenv express mongoose套件
+
+npm i -D eslint-plugin-prettier eslint-config-prettier prettier =>eslint+ prettier套件
+
+npm i validator =>validator套件
+
+npm i http-status-codes =>http-status-codes套件
