@@ -1,0 +1,50 @@
+12/18 資料庫的基本操作
+終端機：(錯了就 ctrl + C )
+
+npm init --yes
+npm i dotenv express mongoose http-status-codes
+npm i -D nodemon  
+npm init @eslint/config
+
+	√ How would you like to use ESLint? · problems
+	> To check syntax and find problems
+    
+	√ What type of modules does your project use? · esm
+	> JavaScript modules (import/export)
+
+	√ Which framework(框架) does your project use? · none
+	> None of these
+
+	√ Does your project use TypeScript? · javascript (no)
+	> no
+
+	√ Where does your code run? · node (以空白建點按√，確認後再 enter)
+		   Browser
+		√ Node
+	The config that you've selected requires the following dependencies:
+ 
+	eslint, globals, @eslint/js
+	√ Would you like to install them now? · Yes
+	> yes
+
+	√ Which package manager do you want to use? · npm
+	> npm
+
+增加一行eslint的設定(老師還在除錯)
+npm i -D eslint-plugin-prettier eslint-config-prettier prettier
+
+npm i npm i validator 
+
+---------------------------------------------------------------------
+vue i18n => 多語言轉換套件
+validator.js => 驗證套件(有支援台灣)
+http 狀態碼
+200 => 二開頭是成功
+---------------------------------------------------------------------
+npm i -D nodemon => 啟動套件
+	"scripts": {"test": "echo \"Error: no test specified\" && exit 1"
+	改成
+	"scripts": {"dev": "nodemon index.js"},
+npm run dev
+npm i http-status-codes => 安裝狀態碼可讀性套件
+---------------------------------------------------------------------
