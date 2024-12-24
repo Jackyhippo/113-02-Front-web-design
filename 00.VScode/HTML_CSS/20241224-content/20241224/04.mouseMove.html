@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css' />
+  <style>
+    body {
+      overflow: hidden;
+      background: black;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: white;
+      position: absolute;
+    }
+
+    .shadow {
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js'></script>
+  <!-- 引入 gsap 主程式 -->
+  <script src="./gsap/gsap.js"></script>
+  <script>
+    gsap.to('.box', {
+      rotation: '+=360',
+      duration: 2,
+      repeat: -1,
+      ease: 'none'
+    })
+
+    for (let i = 0; i < 20; i++) {
+      document.querySelector('.box').insertAdjacentHTML('afterend', '<div class="shadow"></div>')
+    }
+
+    let toggle = 0
+
+    window.addEventListener('mousemove', function (e) {
+      if (toggle % 20 == 0) {
+        console.log(e)
+        gsap.to('.box', {
+          x: e.pageX - $('.box').width() / 2,
+          y: e.pageY - $('.box').height() / 2,
+          duration: 2,
+          delay: 0.1,
+        })
+        gsap.to('.shadow', {
+          x: e.pageX - $('.box').width() / 2,
+          y: e.pageY - $('.box').height() / 2,
+          duration: 2,
+          delay: function (index) {
+            return (index + 1) * 0.1      //0.1、0.2、0.3、0.4、0.5、0.6...
+          },
+          scale(index) {
+            return 1 - index * 0.05
+          },
+          backgroundColor: function (index) {
+            return `rgba(${gsap.utils.random(0, 255)},${gsap.utils.random(0, 255)},${gsap.utils.random(0, 255)},0.5)`
+          }
+        })
+      }
+      toggle++
+    })
+
+    const random = gsap.utils.random(0, 50, 10, true);
+    const randomColor = gsap.utils.random([red, green, blue], true);
+
+  </script>
+
+</body>
+
+</html>
