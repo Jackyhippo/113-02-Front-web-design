@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css' />
+  <style>
+    section {
+      height: 100vh;
+      background: lightblue;
+      position: relative;
+    }
+
+    .bar {
+      width: 100px;
+      color: black;
+      background-color: lightgoldenrodyellow;
+      text-align: right;
+      border-radius: 0.3rem;
+      padding-right: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <section></section>
+  <section>
+    <div class="container">
+      <table class="table table-dark ranking">
+        <tr>
+          <td width="1">HTML</td>
+          <td>
+            <div class="bar"></div>
+          </td>
+        </tr>
+        <tr>
+          <td width="1">CSS</td>
+          <td>
+            <div class="bar"></div>
+          </td>
+        </tr>
+        <tr>
+          <td width="1">JavaScript</td>
+          <td>
+            <div class="bar"></div>
+          </td>
+        </tr>
+        <tr>
+          <td width="1">jQuery</td>
+          <td>
+            <div class="bar"></div>
+          </td>
+        </tr>
+        <tr>
+          <td width="1">vue</td>
+          <td>
+            <div class="bar"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+  <section></section>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js'></script>
+  <!-- 1.引入 gsap 主程式 -->
+  <script src="./gsap/gsap_old.js"></script>
+  <!-- 2.引入 ScrollTrigger 支援套件 -->
+  <script src="./gsap/ScrollTrigger_old.js"></script>
+  <script>
+    // https://gsap.com/docs/v3/Plugins/ScrollTrigger/
+    // 3.註冊套件
+    gsap.registerPlugin(ScrollTrigger)
+    const language = {
+      html: 60,
+      css: 70,
+      js: 80,
+      jq: 55,
+      vue: 90,
+    }
+
+    const tween = gsap.to('.bar', {
+      scrollTrigger: {
+        trigger: '.ranking',
+        start: 'top center',
+        end: 'bottom center',
+        markers: true,
+      },
+      width: function (index, target, targets) {
+        switch (index) {
+          case 0:
+            $(target).append(language.html + '%')
+            return language.html + '%'
+            break;
+          case 1:
+            $(target).append(language.css + '%')
+            return language.css + '%'
+            break;
+          case 2:
+            $(target).append(language.js + '%')
+            return language.js + '%'
+            break;
+          case 3:
+            $(target).append(language.jq + '%')
+            return language.jq + '%'
+            break;
+          case 4:
+            $(target).append(language.vue + '%')
+            return language.vue + '%'
+            break;
+        }
+      },
+      display: 'block',
+      duration: 1,
+      stagger: 0.5,
+    })
+  </script>
+
+</body>
+
+</html>

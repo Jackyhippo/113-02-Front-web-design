@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css' />
+  <style>
+    section {
+      height: 50vh;
+      font-size: 3rem;
+      color: white;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="section01">SECTION01</section>
+  <section id="section02">SECTION02</section>
+  <section id="section03">SECTION03</section>
+  <section id="section04">SECTION04</section>
+  <section id="section05">SECTION05</section>
+  <section id="section06">SECTION06</section>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js'></script>
+  <!-- 1.引入 gsap 主程式 -->
+  <script src="./gsap/gsap_old.js"></script>
+  <!-- 2.引入 ScrollTrigger 支援套件 -->
+  <script src="./gsap/ScrollTrigger_old.js"></script>
+  <script>
+    // https://gsap.com/docs/v3/Plugins/ScrollTrigger/
+
+    // 3.註冊套件
+    gsap.registerPlugin(ScrollTrigger)
+  </script>
+
+</body>
+
+</html>
