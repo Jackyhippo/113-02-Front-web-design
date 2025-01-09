@@ -77,6 +77,7 @@ schema.virtual('cartQuantity').get(function () {
 schema.pre('save', function (next) {
   const user = this
   // 密碼欄位有修改再處理
+  console.log('modified', user.isModified('password'))
   if (user.isModified('password')) {
     // 自己寫驗證
     if (user.password.length < 4) {

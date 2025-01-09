@@ -5,6 +5,10 @@ export default {
   nav: {
     register: '註冊',
     login: '登入',
+    cart: '購物車',
+    orders: '訂單',
+    admin: '管理',
+    logout: '登出'
   },
   register: {
     submit: '建立帳號',
@@ -13,6 +17,9 @@ export default {
   login: {
     submit: '登入',
     success: '登入成功',
+  },
+  logout: {
+    success: '登出成功',
   },
   user: {
     account: '帳號',
@@ -38,9 +45,14 @@ export default {
     // 後端 >> controllers > user.js
     userAccountDuplicate: '使用者帳號重複',
 
+    // 後端 >> controllers > product.js
+    productIdInvalid: '商品 ID 錯誤',
+    productNotFound: '查無商品',
+
     // 後端 >> passport.js
     userPasswordIncorrect: '密碼錯誤',
     userNotFound: '查無使用者',
+    userTokenExpired: '登入過期',
 
     // 後端 >> models > product.js
     productNameRequired: '商品名稱必填',
@@ -55,6 +67,10 @@ export default {
     // 後端 >> index.js
     // 後端 >> auth.js
     requestFormatError: '請求格式錯誤',
+    userPermissionDenied: '使用者權限不足',
+
+    // 後端 >> upload.js
+    uploadFailed: '上傳失敗',
 
     // 後端 >> passport.js
     // controllers > user.js

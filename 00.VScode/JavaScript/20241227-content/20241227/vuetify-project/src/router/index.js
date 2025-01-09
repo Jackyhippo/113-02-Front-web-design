@@ -17,10 +17,10 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
-  const { apiAuth } = useAxios
+  const { apiAuth } = useAxios()
   const user = useUserStore()
 
-  if (from === START_LOCATION && user.isLoggegIn) {
+  if (from === START_LOCATION && user.isLoggedIn) {
     try {
       const { data } = await apiAuth.get('/user/profile')
       user.login(data.result)

@@ -89,7 +89,12 @@ const schema = yup.object({
     .required(t('api.userPasswordRequired'))
     .min(4, t('api.userPasswordTooShort'))
     .max(20, t('api.userPasswordTooLong')),
-  passwordConfirm: yup.string().oneOf([yup.ref('password')], t('api.userPasswordNotMatch')),
+  passwordConfirm: yup
+    .string()
+    // .oneOf(陣列, 訊息)  必須要是陣列內其中一個值
+    // .ref(欄位名稱)      取得欄位的值
+    // .ref('password')   password 欄位的值
+    .oneOf([yup.ref('password')], t('api.userPasswordNotMatch')),
 })
 
 // 建立表單
