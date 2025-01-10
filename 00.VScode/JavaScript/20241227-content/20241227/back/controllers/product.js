@@ -94,10 +94,10 @@ export const getId = async (req, res) => {
 
 export const edit = async (req, res) => {
   try {
-    if (!validator.isMongoId(req.parmas.id)) throw new Error('ID')
+    if (!validator.isMongoId(req.params.id)) throw new Error('ID')
 
     req.body.image = req.file?.path
-    const result = await Product.findByIdAndUpdate(req.parmas.id, req.body, {
+    const result = await Product.findByIdAndUpdate(req.params.id, req.body, {
       runValidators: true,
       new: true,
     }).orFail(new Error('NOT FOUND'))

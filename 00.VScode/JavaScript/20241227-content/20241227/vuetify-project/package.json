@@ -10,6 +10,7 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "@boindil/vue-file-agent-next": "^1.0.5",
     "@mdi/font": "7.4.47",
     "axios": "^1.7.9",
     "pinia-plugin-persistedstate": "^4.2.0",

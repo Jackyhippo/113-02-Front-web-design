@@ -28,5 +28,4 @@ const navs = computed(() => {
     { to: '/', text: t('nav.home'), icon: 'mdi-home' },
   ]
 })
-
 </script>
