@@ -11,7 +11,8 @@ export default {
     logout: '登出',
     adminProducts: '商品管理',
     adminOrders: '訂單管理',
-    home: '首頁'
+    home: '首頁',
+    product: '商品',
   },
   register: {
     submit: '建立帳號',
@@ -29,6 +30,15 @@ export default {
     email: '信箱',
     password: '密碼',
     passwordConfirm: '密碼確認',
+  },
+  cart: {
+    checkout: '結帳',
+  },
+  order: {
+    createdAt: '訂單時間',
+    cart: '商品',
+    price: '訂單金額',
+    account: '帳號'
   },
   admin: {
     index: '選擇管理項目'
@@ -51,7 +61,10 @@ export default {
     createdAt: '新增時間',
     updatedAt: '更新時間',
     onSell: '上架',
-    notOnSell: '下架'
+    notOnSell: '下架',
+    addCart: '加入購物車',
+    addCartQuantityInvalid: '數量格式不符',
+    addCartSuccess: '加入購物車成功',
   },
   productCategory: {
     food: '食品',
@@ -81,6 +94,7 @@ export default {
 
     // 後端 >> controllers > user.js
     userAccountDuplicate: '使用者帳號重複',
+    productNotOnSell: '商品未上架',
 
     // 後端 >> controllers > product.js
     productIdInvalid: '商品 ID 錯誤',
@@ -100,6 +114,14 @@ export default {
     productCategoryRequired: '商品分類必填',
     productCategoryInvalid: '商品分類不符',
     productSellRequired: '商品上下架必填',
+
+    // 後端 >> models > order.js
+    orderCartProductRequired: '訂單商品必填',
+    orderCartQuantityRequired: '訂單數量必填',
+    orderCartQuantityTooSmall: '訂單數量不符',
+    orderUserRequired: '訂單使用者必填',
+    orderCartRequired: '訂單購物車必填',
+    orderCartEmpty: '訂單購物車為空',
 
     // 後端 >> index.js
     // 後端 >> auth.js

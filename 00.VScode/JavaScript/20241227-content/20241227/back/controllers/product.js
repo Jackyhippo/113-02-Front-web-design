@@ -64,8 +64,8 @@ export const getAll = async (req, res) => {
 
 export const getId = async (req, res) => {
   try {
-    if (!validator.isMongoId(req.parmas.id)) throw new Error('ID')
-    const result = await Product.findById(req.parmas.id).orFail(new Error('NOT FOUND'))
+    if (!validator.isMongoId(req.params.id)) throw new Error('ID')
+    const result = await Product.findById(req.params.id).orFail(new Error('NOT FOUND'))
     res.status(StatusCodes.OK).json({
       success: true,
       message: '',
